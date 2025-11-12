@@ -1,0 +1,104 @@
+body {
+  background-image: url('homepage1.jpg');
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow-x: hidden;
+  margin: 0;
+}
+html{
+    margin: 0;
+}
+#topSection{
+    height: 20vw;
+    background-color: white;
+}
+#welcomeText{
+    margin: 0;
+    text-align: center;
+    line-height: 20vw;
+}
+#videoSection{
+    height: 50vw;
+    background-color: blue;
+    margin: 0;
+    opacity: 0.7;
+    display: grid;
+    place-items: center;
+}
+#mainTitleSection{
+    margin: 0;
+    height: 10vw;
+    background-color: white;
+    width:100vw;
+    display: grid;
+    place-items: center;
+}
+#name, #slogan{
+    margin: 0;
+    text-align: center;
+}
+#aboutUsSection{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vw;
+    gap: 5vw;
+}
+#aboutUsImgSection{
+    margin: 0;
+    background-color: blue;
+    width: 50%;
+    height: 80%;
+}
+#aboutUsTextSection{
+    margin: 0;
+    width: 50%;
+    height: 80%;
+}
+#aboutUsTitle, #aboutUsText{
+    margin-left: 8vw;
+}
+#highlightSection{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vw;
+    gap: 5vw;
+}
+#optionsSection{
+    margin: 0;
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#optionsImgSection{
+    margin: 0;
+    width: 50%;
+    height: 70%;
+    background-color: blue;
+}
+.option{
+    margin: 0;
+    background-color: white;
+    opacity: 0.4;
+    width: 100%;
+    height: 47%;
+    margin-left: 2vw;
+    border-radius: 3vw;
+}
+.optionTitle{
+    padding-left: 2vw;
+    margin-top: 3vw;
+    color: grey;
+}
+.optionText{
+    padding-left: 2vw;
+    color: grey;
+}
+
+
