@@ -60,6 +60,9 @@ html{
 #aboutUsTitle, #aboutUsText{
     margin-left: 8vw;
 }
+#aboutUsText{
+    padding-right: 2vw;
+}
 #highlightSection{
     margin: 0;
     display: flex;
@@ -100,5 +103,12 @@ html{
     padding-left: 2vw;
     color: grey;
 }
-
-
+h1{
+    font-size: 2vw;
+}
+h2{
+    font-size: 2vw;
+}
+p{
+    font-size: 1.2vw;
+}
