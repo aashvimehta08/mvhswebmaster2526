@@ -10,13 +10,13 @@ html{
     margin: 0;
 }
 #topSection{
-    height: 20vw;
+    height: 10vw;
     background-color: white;
 }
 #welcomeText{
     margin: 0;
     text-align: center;
-    line-height: 20vw;
+    line-height: 10vw;
 }
 #videoSection{
     height: 50vw;
@@ -59,9 +59,12 @@ html{
 }
 #aboutUsTitle, #aboutUsText{
     margin-left: 8vw;
+    color:white;
 }
-#aboutUsText{
+p{
     padding-right: 2vw;
+    color:white;
+    word-spacing: 0.5vw;
 }
 #highlightSection{
     margin: 0;
@@ -111,4 +114,32 @@ h2{
 }
 p{
     font-size: 1.2vw;
+}
+#joinSection{
+    height: 50vw;
+    margin:0;
+}
+#joinTitle{
+    text-align: center;
+    color: white;
+    letter-spacing: 3vw;
+}
+#joinContentSection{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vw;
+    gap: 5vw;
+}
+#joinImgSection{
+    margin: 0;
+    background-color: blue;
+    width: 50%;
+    height: 80%;
+}
+#joinTextSection{
+    margin: 0;
+    width: 50%;
+    height: 80%;
 }
