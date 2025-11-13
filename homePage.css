@@ -61,11 +61,6 @@ html{
     margin-left: 8vw;
     color:white;
 }
-p{
-    padding-right: 2vw;
-    color:white;
-    word-spacing: 0.5vw;
-}
 #highlightSection{
     margin: 0;
     display: flex;
@@ -111,9 +106,12 @@ h1{
 }
 h2{
     font-size: 2vw;
+
 }
 p{
     font-size: 1.2vw;
+    padding-right: 2vw;
+    word-spacing: 0.5vw;
 }
 #joinSection{
     height: 50vw;
@@ -142,6 +140,7 @@ p{
     margin: 0;
     width: 50%;
     height: 80%;
+    color:white;
 }
 #footerSection{
     height: 15vw;
@@ -157,4 +156,25 @@ p{
     width: 30%;
     height: 100%;
     background-color: aqua;
+}
+#socialsSection{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+    background-color: blue;
+}
+#logoSection{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+    background-color: pink;
+}
+.footerText{
+    margin-left: 5vw;
+}
+.social{
+    margin: 0;
+    height: 5vw;
+    width: 5vw;
+    
 }
