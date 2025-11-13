@@ -143,3 +143,18 @@ p{
     width: 50%;
     height: 80%;
 }
+#footerSection{
+    height: 15vw;
+    background-color: white;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5vw;
+}
+#contactUsSection{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+    background-color: aqua;
+}
