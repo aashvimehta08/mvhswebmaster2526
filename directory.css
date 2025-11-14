@@ -62,4 +62,68 @@ html{
 .selectionButton:hover{
     text-shadow: 0 0 1vw #2B85A7;
 }
+#footerSection{
+    height: 15vw;
+    background-color: white;
+    margin-top: 15vw; /*I NO LIKE THIS CHNAGE SO STICKS TO BOTTOM ON ANY PAGE THIS JUST TEMPORARY*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5vw;
+}
+#logoSection{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+}
+#footerLogo{
+    margin-left: 5vw;
+    margin-top: 2vw;
+    height: 10vw;
+    width:15vw;
+}
+#contactUsSection{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+}
+#socialsSection{
+    margin: 0;
+    width: 15%;
+    height: 85%;
+    position: relative;
+    margin: auto;
+}
+.footerText{
+    margin-left: 5vw;
+}
+.social{
+    height: 5vw;
+    width: 5vw;
+    background-color: #FEB84E;
+    border-radius: 100%;
+    position: absolute;
+}
+.top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+.left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
