@@ -12,6 +12,10 @@ html{
 #topSection{
     height: 10vw;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
 }
 #welcomeText{
     margin: 0;
@@ -19,11 +23,15 @@ html{
     line-height: 10vw;
     letter-spacing: 3vw;
 }
+#topLogo{
+    height: 6vw;
+}
 #videoSection{
     height: 50vw;
-    background-color: blue;
+    background-image: url('https://t3.ftcdn.net/jpg/06/05/98/54/360_F_605985413_uDaH4RfKj3NLArsvyRQhYNMXg0IpV4go.jpg');
+    background-size: 100% auto;
     margin: 0;
-    opacity: 0.7;
+    opacity: 0.9;
     display: grid;
     place-items: center;
 }
