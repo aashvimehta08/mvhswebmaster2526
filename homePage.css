@@ -17,6 +17,7 @@ html{
     margin: 0;
     text-align: center;
     line-height: 10vw;
+    letter-spacing: 20vw;
 }
 #videoSection{
     height: 50vw;
@@ -173,7 +174,6 @@ p{
     margin-left: 5vw;
 }
 .social{
-    margin: 0;
     height: 5vw;
     width: 5vw;
     background-color: red;
