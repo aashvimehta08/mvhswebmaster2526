@@ -1,0 +1,40 @@
+body {
+    background-image: url('homepage1.jpg');
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    overflow-x: hidden;
+    margin: 0;
+  }
+html{
+    margin: 0;
+}
+#topSection{
+    height: 10vw;
+    background-color: white;
+}
+#directoryText{
+    margin: 0;
+    text-align: center;
+    line-height: 10vw;
+}
+.eventsGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 5vw);
+    width: 70%;
+    margin-bottom: 10%;
+    margin-left: 18%;
+    gap: 15vw;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 80vw;
+}
+.event{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+  height: 18vw
+}
+
