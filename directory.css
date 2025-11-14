@@ -12,6 +12,7 @@ html{
 #topSection{
     height: 10vw;
     background-color: white;
+    margin-bottom: 5%;
 }
 #directoryText{
     margin: 0;
@@ -27,6 +28,7 @@ html{
     column-gap: 5vw;
     height: 80vw;
     margin:auto;
+    margin-right: 5%;
 }
 .event{
   display: flex;
@@ -36,4 +38,26 @@ html{
   height: 25vw;
   border-radius: 10%;
 }
-
+#mainContent{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vw;
+    gap: 5vw;
+}
+.options{
+    margin-left: 8vw;
+    margin-bottom: 4vw;
+}
+.selectionButton{
+    background-color: transparent;
+    border: transparent;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.3vw;
+    font-size: 1.5vw;
+}
+.selectionButton:hover{
+    text-decoration: underline;
+    text-shadow: 0 0 1vw #2B85A7;
+}
