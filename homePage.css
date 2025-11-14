@@ -159,9 +159,9 @@ p{
 }
 #socialsSection{
     margin: 0;
-    width: 30%;
-    height: 100%;
-    background-color: blue;
+    width: 15%;
+    height: 85%;
+    position: relative;
 }
 #logoSection{
     margin: 0;
@@ -176,5 +176,30 @@ p{
     margin: 0;
     height: 5vw;
     width: 5vw;
-    
+    background-color: red;
+    border-radius: 100%;
+    position: absolute;
+}
+.top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
