@@ -66,7 +66,7 @@ html{
 #footerSection{
     height: 15vw;
     background-color: white;
-    margin-top: 15vw; /*I NO LIKE THIS CHNAGE SO STICKS TO BOTTOM ON ANY PAGE THIS JUST TEMPORARY*/
+    margin-top: 20%; /*I NO LIKE THIS CHNAGE SO STICKS TO BOTTOM ON ANY PAGE THIS JUST TEMPORARY*/
     display: flex;
     justify-content: space-between;
     align-items: center;
