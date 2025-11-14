@@ -20,22 +20,20 @@ html{
 }
 .eventsGrid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 4vw);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 4vw);
     width: 70%;
-    margin-bottom: 10%;
-    margin-left: 18%;
-    row-gap: 30vw;
+    row-gap: 25vw;
     column-gap: 5vw;
-    padding-left: 5%;
-    padding-right: 5%;
     height: 80vw;
+    margin:auto;
 }
 .event{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aquamarine;
-  height: 30vw
+  background-color: white;
+  height: 25vw;
+  border-radius: 10%;
 }
 
