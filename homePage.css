@@ -49,7 +49,7 @@ html{
 }
 #aboutUsImgSection{
     margin: 0;
-    background-color: blue;
+    background-color: transparent;
     width: 50%;
     height: 80%;
 }
