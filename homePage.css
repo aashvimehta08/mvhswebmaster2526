@@ -152,23 +152,28 @@ p{
     align-items: center;
     gap:5vw;
 }
+#logoSection{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+}
+#footerLogo{
+    margin-left: 5vw;
+    margin-top: 2vw;
+    height: 10vw;
+    width:15vw;
+}
 #contactUsSection{
     margin: 0;
     width: 30%;
     height: 100%;
-    background-color: aqua;
 }
 #socialsSection{
     margin: 0;
     width: 15%;
     height: 85%;
     position: relative;
-}
-#logoSection{
-    margin: 0;
-    width: 30%;
-    height: 100%;
-    background-color: pink;
+    margin: auto;
 }
 .footerText{
     margin-left: 5vw;
@@ -176,7 +181,7 @@ p{
 .social{
     height: 5vw;
     width: 5vw;
-    background-color: red;
+    background-color: #FEB84E;
     border-radius: 100%;
     position: absolute;
 }
