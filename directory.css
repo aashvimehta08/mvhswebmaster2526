@@ -37,6 +37,7 @@ html{
   background-color: white;
   height: 25vw;
   border-radius: 10%;
+  opacity: 0.7;
 }
 #mainContent{
     margin: 0;
