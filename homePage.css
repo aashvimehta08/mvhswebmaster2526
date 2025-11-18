@@ -1,3 +1,75 @@
+.off-screen-menu {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 30vw;
+    position: fixed;
+    top: 0;
+    left: -30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: top;
+    text-align: center;
+    transition: .3s ease;
+    z-index: 9999; 
+}
+.off-screen-menu li, .off-screen-menu a{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    font-size: 4vw;
+}
+.off-screen-menu li:nth-child(1) {
+    margin-top: 7vw;
+}
+.off-screen-menu.active {
+    left: 0vw;
+}
+nav {
+    padding: 1rem;
+    display: flex;
+    background-color: white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+}
+.ham-menu {
+    height: 4vw;
+    width: 3vw;
+    margin-right: auto;
+    position: relative;
+    z-index: 10000;
+}
+.ham-menu span {
+    height: 0.3vw;
+    width: 100%;
+    background-color: black;
+    border-radius: 1vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: black;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
 body {
   background-image: url('homepage1.jpg');
   background-attachment: scroll;
@@ -36,12 +108,13 @@ html{
     width: 100%;
     overflow: hidden;
     background-color: #1A3869;
+    opacity: 0.8;
 }
 #aboutUsVideo{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0.5;
 }
 #mainTitleSection{
     position: absolute;
@@ -49,7 +122,6 @@ html{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background-color: white;
     width: 100%;
     padding: 1vw;
     letter-spacing: 2vw;
@@ -58,6 +130,7 @@ html{
 #name, #slogan{
     margin: 0;
     text-align: center;
+    color: white;
 }
 #aboutUsSection{
     margin: 0;
@@ -69,9 +142,16 @@ html{
 }
 #aboutUsImgSection{
     margin: 0;
-    background-color: transparent;
     width: 50%;
     height: 80%;
+    background-color: #1A3869;
+    opacity: 0.8;
+}
+#aboutUsImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
 }
 #aboutUsTextSection{
     margin: 0;
@@ -115,7 +195,7 @@ html{
 }
 .optionTitle{
     padding-left: 2vw;
-    margin-top: 3vw;
+    margin-top: 2vw;
     color: grey;
 }
 .optionText{

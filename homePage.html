@@ -4,9 +4,31 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="homePage.css">
+ <script>
+  function toggleMenu() {
+   const navLinks = document.querySelector('#navLinks');
+   navLinks.classList.toggle('active');
+ }
+ </script>
 </head>
 <body>
-  <nav></nav>
+  <div class="off-screen-menu">
+      <ul>
+        <li><a href="homePage.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="directory.html">Directory</a></li>
+      </ul>
+    </div>
+    <nav>
+      <div id="navBar">
+      <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      </div>
+    </nav>
+    <script src="./app.js"></script>
   <div id="topSection">
     <img id="topLogo" src="logo.png" alt="logo">
     <h1 id="welcomeText">WELCOME</h1>
@@ -22,7 +44,9 @@
     </div>
   </div>
   <div id="aboutUsSection">
-    <img id="aboutUsImgSection" src="https://t3.ftcdn.net/jpg/02/29/93/92/360_F_229939264_afNRtWgc4vlkl2wGPFdn9iU3N7WQXlEx.jpg">
+    <div id="aboutUsImgSection">
+      <img id="aboutUsImg" src="https://t3.ftcdn.net/jpg/02/29/93/92/360_F_229939264_afNRtWgc4vlkl2wGPFdn9iU3N7WQXlEx.jpg">
+    </div>
     <div id="aboutUsTextSection">
       <h1 id="aboutUsTitle">ABOUT US</h1>
       <p id="aboutUsText">
