@@ -53,6 +53,7 @@ html{
     height: auto;
     width: 17vw;
     margin-left: 0.3vw;
+    border-radius: 1vw;
 }
   .eventText {
     font-size: 1vw;
