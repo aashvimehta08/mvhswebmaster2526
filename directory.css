@@ -10,15 +10,21 @@ html{
     margin: 0;
 }
 #topSection{
-    height: 10vw;
-    background-color: white;
-    margin-bottom: 5%;
+  height: 10vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+#topLogo{
+  height: 6vw;
 }
 #directoryText{
-    margin: 0;
-    text-align: center;
-    line-height: 10vw;
-    letter-spacing: 1vw;
+  margin: 0;
+  text-align: center;
+  line-height: 10vw;
+  letter-spacing: 2vw;
 }
 .eventsGrid{
     display: grid;
@@ -30,6 +36,7 @@ html{
     height: 80vw;
     margin:auto;
     margin-right: 5%;
+    margin-top: 3vw;
 }
 .event{
   display: flex;
@@ -75,6 +82,9 @@ html{
     align-items: center;
     height: 50vw;
     gap: 5vw;
+}
+#selectionSection{
+  margin-top: 10vw;
 }
 .options{
     margin-left: 8vw;
