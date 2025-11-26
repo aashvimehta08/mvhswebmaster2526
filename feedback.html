@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="feedback.css">
-    <title>FeedbackPage</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="feedback.css">
+   <title>FeedbackPage</title>
 </head>
 
+
 <body>
-    <div id="titleSection">
-        <h1>FEEDBACK</h1>
-    </div>
+   <div id="topSection">
+       <img id="topLogo" src="logo.png" alt="logo">
+       <h1 id="feedbackText">FEEDBACK</h1>
+   </div>
 
-    <div id="formBox" class="formBox">
-        <div id="formBoxtitle" class="title">
-            <h2>How can we improve your experience?</h2>
-            <p>Let us know below!</p>
-        </div>
 
-        <form id="feedbackForm" class="feedbackForm">
+   <div id="formBox" class="formBox">
+       <div id="formBoxtitle" class="title">
+           <h2>How can we improve your experience?</h2>
+           <p>Let us know below!</p>
+       </div>
 
-            <div id="catagory" class="catagory">
-                <select id="selectSection" required>
-                    <option value="" disabled selected hidden>Category of Need</option>
-                    <option value="usability">Usability</option>
-                    <option value="contentQuality">Content Quality</option>
-                    <option value="performance">Performance</option>
-                    <option value="satisfation">Satisfaction</option>
-                </select>
-            </div>
 
-            <div id="nameInputSection">
-                <input class="IDinput" type="text" placeholder=" Full Name" required>
-            </div>
-    
-            <div id="emailInputSection">
-                <input class="IDinput" type="text" placeholder=" Email" required>
-            </div>
+       <form id="feedbackForm" class="feedbackForm">
 
-            <div id="mainFeedbackInput">
-                <textarea class="mainFeedbackInput" placeholder= " Your feedback" required></textarea>
-            </div>
 
-            <div id="submitButton" class="submitButton">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
+           <div id="catagory" class="catagory">
+               <select id="selectSection" required>
+                   <option value="" disabled selected hidden>Category of Need</option>
+                   <option value="usability">Usability</option>
+                   <option value="contentQuality">Content Quality</option>
+                   <option value="performance">Performance</option>
+                   <option value="satisfation">Satisfaction</option>
+               </select>
+           </div>
 
-        <div id=""whatsNextSection class="whatsNext">
-            <p id="whatsNextTitle" class="whatsNextTitle">What's Next?</p>
-            <h3 id="whatsNextText" class="whatsNextText">
-                You can always expect a response from 
-                our team within 3-5 Buisness Days.
-            </h3>
-        </div>
+
+           <div id="nameInputSection">
+               <input class="IDinput" type="text" placeholder=" Full Name" required>
+           </div>
+  
+           <div id="emailInputSection">
+               <input class="IDinput" type="text" placeholder=" Email" required>
+           </div>
+
+
+           <div id="mainFeedbackInput">
+               <textarea class="mainFeedbackInput" placeholder= " Your feedback" required></textarea>
+           </div>
+
+
+           <div id="submitButton" class="submitButton">
+               <button type="submit">Submit</button>
+           </div>
+       </form>
+   </div>
+
+
+       <div id=""whatsNextSection class="whatsNext">
+           <p id="whatsNextTitle" class="whatsNextTitle">What's Next?</p>
+           <h3 id="whatsNextText" class="whatsNextText">
+               You can always expect a response from
+               our team within 3-5 Buisness Days.
+           </h3>
+       </div>
 </body>
 </html>
