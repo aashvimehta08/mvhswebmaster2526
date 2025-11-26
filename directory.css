@@ -87,7 +87,7 @@ html{
     margin: 0;
 }
 #topSection{
-  height: 10vw;
+  height: 11vw;
   background-color: white;
   display: flex;
   align-items: center;
@@ -96,12 +96,13 @@ html{
 }
 #topLogo{
   height: 6vw;
+  margin-top: 4vw;
 }
 #directoryText{
-  margin: 0;
   text-align: center;
   line-height: 10vw;
   letter-spacing: 2vw;
+  margin-top: 4vw;
 }
 .eventsGrid{
     display: grid;
