@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
+
+p,h1{
+  font-family: "Arya", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 body {
     background-image: url('homepage1.jpg');
     background-attachment: scroll;
@@ -35,7 +42,7 @@ html{
     column-gap: 5vw;
     height: 80vw;
     margin:auto;
-    margin-right: 5%;
+    margin-right: 3vw;
     margin-top: 3vw;
 }
 .event{
@@ -50,29 +57,22 @@ html{
 .eventTitle {
     font-size: 2vw;
     text-align: center;
-    margin-left: 5%;
-    margin-top: 8.8vw;
     letter-spacing: 0.3vw;
-    margin-bottom: 0.6vw;
+    line-height: 1.8vw;
   }
 .eventImg{
     display: flex;
     height: auto;
     width: 17vw;
-    margin-left: 0.3vw;
     border-radius: 1vw;
+    align-items: center;
 }
   .eventText {
     font-size: 1vw;
     width: 15vw;
     text-align: center;
-    margin-left: 1.3vw;
     margin-top: 0.8vw;
-  }
-
-  .eventContent{
-    align-items: center;
-    margin-bottom: 10vw;
+    line-height: 1.4vw;
   }
 
 #mainContent{
