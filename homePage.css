@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
 /*nav bar styling start*/
 nav{
     background-color: white;
@@ -66,7 +67,7 @@ nav{
     width: 7vw;
     color: black;
     vertical-align: center;
-    margin-top: 0.8vw;
+    margin-top: 0.5vw;
 }
 /*nav bar styling bottom*/
 body {
@@ -79,7 +80,9 @@ body {
   font-family: Tahoma, Verdana, sans-serif;
 }
 h1,h2,h3,p{
-    font-weight: 10;
+    font-family: "Arya", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 html{
     margin: 0;
