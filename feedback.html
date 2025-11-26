@@ -4,69 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="feedback.css">
-    <title>Document</title>
+    <title>FeedbackPage</title>
 </head>
+
 <body>
-    <div id="titleSection">
-        <h1>FEEDBACK</h1>
+    <div id="topSection">
+        <img id="topLogo" src="logo.png" alt="logo">
+        <h1 id="feedbackText">FEEDBACK</h1>
     </div>
 
-
-    
-    <div class = "form-box">
-        <div class="title">
+    <div id="formBox" class="formBox">
+        <div id="formBoxtitle" class="title">
             <h2>How can we improve your experience?</h2>
             <p>Let us know below</p>
         </div>
-    </div>
 
-    <br> 
-    <br>
-    <br> 
-    <br>
-    <br> 
-    <br>
-    <br> 
-    <br>
+        <form id="feedbackForm" class="feedbackForm">
 
-        <form class="feedback-form">
-
-            <div class="field-group">
-                <select required>
+            <div id="catagory" class="catagory">
+                <select id="selectSection" required>
                     <option value="" disabled selected hidden>Category of Need</option>
-                    <option value="consulting">Usability</option>
-                    <option value="booking">Content Quality</option>
-                    <option value="design">Performance</option>
-                    <option value="other">Satisfaction</option>
+                    <option value="usability">Usability</option>
+                    <option value="contentQuality">Content Quality</option>
+                    <option value="performance">Performance</option>
+                    <option value="satisfation">Satisfaction</option>
                 </select>
+            </div>
+
+            <div id="nameInputSection">
+                <input class="IDinput" type="text" placeholder="Full Name" required>
+            </div>
     
+            <div id="emailInputSection">
+                <input class="IDinput" type="text" placeholder="Email" required>
             </div>
 
-            <br>
-
-            <div class="form-group">
-                <input type="text" placeholder="Full Name" required>
-            </div>
-            
-            <br>
-            
-            <div class="form-group">
-                <input type="text" placeholder="Email" required>
+            <div id="mainFeedbackInput">
+                <textarea class="mainFeedbackInput" placeholder= "Your feedback" required></textarea>
             </div>
 
-            <br>
-
-            <div class="text-group">
-                <textarea placeholder="Your feedback" required></textarea>
-            </div>
-
-            <div class="submit">
+            <div class="submit-btn">
                 <button type="submit">Submit</button>
             </div>
-
         </form>
-    <!-- </div>     -->
+    </div>
 
-
+        <div id=""whatsNextSection class="whatsNext">
+            <p id="whatsNextTitle" class="whatsNextTitle">What's Next?</p>
+            <h3 id="whatsNextText" class="whatsNextText">
+                You can always expect a response from 
+                our team within 3-5 Buisness Days.
+            </h3>
+        </div>
 </body>
 </html>

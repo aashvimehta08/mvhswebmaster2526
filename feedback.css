@@ -5,145 +5,71 @@ body {
     background-size: 100% auto;
     overflow-x: hidden;
     margin: 0;
-    padding: 0;
-    height: 180vh;
-}
-
-html {
+  }
+html{
     margin: 0;
 }
-
-#titleSection {
-    height: 10vw;
-    margin-bottom: 5%;
+#topSection{
+  height: 10vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+#topLogo{
+    height: 6vw;
+  }
+#feedbackText{
+    margin: 0;
     text-align: center;
-    font-size: 100%;
-    letter-spacing: 1vw;
-    background-color: white;
-    display: flex;
+    line-height: 10vw;
+    letter-spacing: 2vw;
+}
+.formBox{
+    align-items: center;
     justify-content: center;
-    align-items: center;
-}
-
-.form-wrapper {
-    text-align: center;       
     display: flex;
     flex-direction: column;
-    align-items: center;      
-    gap: 1.5vw;
-    padding: 3vw;
+    margin-top: 4vw;
 }
-
-.form-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #003366;
-    margin: 0;
+.title{
+    font-size: 2vw;
     text-align: center;
 }
-
-
-.subtitle {
-    text-align: center;
-}
-
-.form-box {
-    margin: auto;
-    width: 46%;
-    height: 55%;
-    background: rgba(255, 255, 255, 0.70);
+.feedbackForm{
     align-items: center;
-    border-radius: 10%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.title {
-    margin: auto;
-    text-align: center;
-}
-
-.feedback-form {
-    padding: 3vw;
-    text-align: right;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: 1.5vw;
-    width: 103.5%;
-    height: 100%;
-    box-sizing: border-box;
-    margin-top: -60vw;
-    margin-left: -40vw;
+    gap: 1vw;
+    background-color: white;
+    height: 40vw;
+    border-radius: 5vw;
+    width: 60vw;
+    opacity: 0.7;
 }
-
-.field-group label{
-    font-size: 1.1vw;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    display: block;
+#selectSection{
+    display: flex;
+    flex-direction: column;
+    height: 3vw;
+    width: 50vw;
+    border-radius: 1vw;
 }
-
-.field-group select {
-    width: 22.4%;
-    padding: 1% 1%;
-    border-radius: 10px;
-    border: 1% solid rgba(0,0,0,0.2);
-    background: rgba(255,255,255,0.8);
-    font-size: 1vw;
-    outline: none;
-    transition: 0.25s ease;
+.IDinput{
+    display: flex;
+    flex-direction: column;
+    height: 3vw;
+    width: 50vw;
+    border-radius: 1vw; 
 }
-
-.field-group select:hover,
-.field-group select:focus {
-    border-color: #175d8e;
-    box-shadow: 0 0 12px rgba(36, 130, 224, 0.25);
-}
-
-.form-group input {
-    width: 20%;
-    padding: 1% 1%;
-    border-radius: 10px;
-    border: 1% solid rgba(0,0,0,0.2);
-    background: rgba(255,255,255,0.8);
-    font-size: 1vw;
-    outline: none;
-    transition: 0.25s ease;
-}
-
-.form-group input:hover,
-.form-group input:focus {
-    border-color: #175d8e;
-    box-shadow: 0 0 12px rgba(36, 130, 224, 0.25);
-}
-
-.text-group textarea {
-    width: 20%;
-    height: 140px;
-    padding: 14px 16px;
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.2);
-    background: rgba(255,255,255,0.8);
-    font-size: 1rem;
-    font-family: "Inter", sans-serif;
+.mainFeedbackInput{
+    display: flex;
+    flex-direction: column;
+    height: 20vw;
+    width: 50vw;
+    border-radius: 1vw; 
     resize: none;
-    outline: none;
-    transition: 0.25s ease;
 }
-
-/* Hover + Focus Effects (matches other fields) */
-.text-group textarea:hover,
-.text-group textarea:focus {
-    border-color: #175d8e;
-    box-shadow: 0 0 12px rgba(36, 130, 224, 0.25);
-}
-
-.submit {
-    align-self: center;
-    width: 81%;
-}
-
-.submit:hover {
-    border-color: #175d8e;
-    box-shadow: 0 0 12px rgba(36, 130, 224, 0.25);
-}
+ 
 
