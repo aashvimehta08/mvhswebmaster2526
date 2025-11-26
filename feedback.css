@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
 
-p,h1,h3,h2,:placeholder-shown,select,button{
+p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
   font-family: "Arya", sans-serif;
   font-weight: 400;
   font-style: normal;
