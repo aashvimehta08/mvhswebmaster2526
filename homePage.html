@@ -3,32 +3,43 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="homePage.css">
- <script>
-  function toggleMenu() {
-   const navLinks = document.querySelector('#navLinks');
-   navLinks.classList.toggle('active');
- }
- </script>
+  <link rel="stylesheet" href="homePage.css">
 </head>
 <body>
-  <div class="off-screen-menu">
-      <ul>
-        <li><a href="homePage.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="directory.html">Directory</a></li>
-      </ul>
+  <nav>
+    <div id="navBar">
+      <div id="home" class="icon">
+        <a href="homePage.html"><img id="homeIcon" class="iconImg" src="home.png">
+        <div class="line"></div>
+        <p id="homeLabel" class="label">Home</p></a>
+      </div>
+      <div id="directory" class="icon">
+        <a href="sportsDirectory.html"><img id="directoryIcon" class="iconImg" src="directory.png">
+        <div class="line"></div>
+        <p id="directoryLabel" class="label">Directory</p></a>
+      </div>
+      <div id="about" class="icon">
+        <a href="aboutus.html"><img id="aboutIcon" class="iconImg" src="about.png">
+        <div class="line"></div>
+        <p id="aboutLabel" class="label">About Us</p></a>
+      </div>
+      <div id="feedback" class="icon">
+        <a href="feedback.html"><img id="feedbackIcon" class="iconImg" src="feedback.png">
+        <div class="line"></div>
+        <p id="feedbackLabel" class="label">Feedback</p></a>
+      </div>
+      <div id="calendar" class="icon">
+        <a href="calendar.html"><img id="calendarIcon" class="iconImg" src="calendar.png">
+        <div class="line"></div>
+        <p id="calendarLabel" class="label">Calendar</p></a>
+      </div>
+      <div id="sources" class="icon">
+        <a href="sources.html"><img id="sourcesIcon" class="iconImg" src="sources.png">
+        <div class="line"></div>
+        <p id="sourcesLabel" class="label">Sources</p></a>
+      </div>
     </div>
-    <nav>
-      <div id="navBar">
-      <div class="ham-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      </div>
-    </nav>
-    <script src="./app.js"></script>
+  </nav>
   <div id="topSection">
     <img id="topLogo" src="logo.png" alt="logo">
     <h1 id="welcomeText">WELCOME</h1>
