@@ -4,103 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="feedback.css">
-    <title>Document</title>
+    <title>FeedbackPage</title>
 </head>
+
 <body>
-    <nav>
-    <div id="navBar">
-      <div id="home" class="icon">
-        <a href="homePage.html"><img id="homeIcon" class="iconImg" src="home.png">
-        <div class="line"></div>
-        <p id="homeLabel" class="label">Home</p></a>
-      </div>
-      <div id="directory" class="icon">
-        <a href="sportsDirectory.html"><img id="directoryIcon" class="iconImg" src="directory.png">
-        <div class="line"></div>
-        <p id="directoryLabel" class="label">Directory</p></a>
-      </div>
-      <div id="about" class="icon">
-        <a href="aboutus.html"><img id="aboutIcon" class="iconImg" src="about.png">
-        <div class="line"></div>
-        <p id="aboutLabel" class="label">About Us</p></a>
-      </div>
-      <div id="feedback" class="icon">
-        <a href="feedback.html"><img id="feedbackIcon" class="iconImg" src="feedback.png">
-        <div class="line"></div>
-        <p id="feedbackLabel" class="label">Feedback</p></a>
-      </div>
-      <div id="calendar" class="icon">
-        <a href="calendar.html"><img id="calendarIcon" class="iconImg" src="calendar.png">
-        <div class="line"></div>
-        <p id="calendarLabel" class="label">Calendar</p></a>
-      </div>
-      <div id="sources" class="icon">
-        <a href="sources.html"><img id="sourcesIcon" class="iconImg" src="sources.png">
-        <div class="line"></div>
-        <p id="sourcesLabel" class="label">Sources</p></a>
-      </div>
-    </div>
-  </nav>
     <div id="titleSection">
         <h1>FEEDBACK</h1>
     </div>
 
-
-    
-    <div class = "form-box">
-        <div class="title">
+    <div id="formBox" class="formBox">
+        <div id="formBoxtitle" class="title">
             <h2>How can we improve your experience?</h2>
-            <p>Let us know below</p>
+            <p>Let us know below!</p>
         </div>
-    </div>
 
-    <br> 
-    <br>
-    <br> 
-    <br>
-    <br> 
-    <br>
-    <br> 
-    <br>
+        <form id="feedbackForm" class="feedbackForm">
 
-        <form class="feedback-form">
-
-            <div class="field-group">
-                <select required>
+            <div id="catagory" class="catagory">
+                <select id="selectSection" required>
                     <option value="" disabled selected hidden>Category of Need</option>
-                    <option value="consulting">Usability</option>
-                    <option value="booking">Content Quality</option>
-                    <option value="design">Performance</option>
-                    <option value="other">Satisfaction</option>
+                    <option value="usability">Usability</option>
+                    <option value="contentQuality">Content Quality</option>
+                    <option value="performance">Performance</option>
+                    <option value="satisfation">Satisfaction</option>
                 </select>
+            </div>
+
+            <div id="nameInputSection">
+                <input class="IDinput" type="text" placeholder="Full Name" required>
+            </div>
     
+            <div id="emailInputSection">
+                <input class="IDinput" type="text" placeholder="Email" required>
             </div>
 
-            <br>
-
-            <div class="form-group">
-                <input type="text" placeholder="Full Name" required>
-            </div>
-            
-            <br>
-            
-            <div class="form-group">
-                <input type="text" placeholder="Email" required>
+            <div id="mainFeedbackInput">
+                <textarea class="mainFeedbackInput" placeholder= "Your feedback" required></textarea>
             </div>
 
-            <br>
-
-            <div class="text-group">
-                <textarea placeholder="Your feedback" required></textarea>
-            </div>
-
-            <div class="submit">
+            <div class="submit-btn">
                 <button type="submit">Submit</button>
             </div>
-
         </form>
-    <!-- </div>     -->
+    </div>
 
-
+        <div id=""whatsNextSection class="whatsNext">
+            <p id="whatsNextTitle" class="whatsNextTitle">What's Next?</p>
+            <h3 id="whatsNextText" class="whatsNextText">
+                You can always expect a response from 
+                our team within 3-5 Buisness Days.
+            </h3>
+        </div>
 </body>
 </html>

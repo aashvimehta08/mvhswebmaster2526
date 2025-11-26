@@ -76,7 +76,7 @@ p,h1{
   font-style: normal;
 }
 body {
-    background-image: url('homepage1.jpg');
+    background-image: url('Short\ bg.png');
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -115,6 +115,13 @@ html{
     margin-right: 3vw;
     margin-top: 3vw;
 }
+.eventContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .event{
   display: flex;
   align-items: center;
@@ -139,7 +146,7 @@ html{
 }
   .eventText {
     font-size: 1vw;
-    width: 15vw;
+    width: 17vw;
     text-align: center;
     margin-top: 0.8vw;
     line-height: 1.4vw;
