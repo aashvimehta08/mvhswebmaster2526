@@ -1,3 +1,4 @@
+/*nav bar styling start*/
 nav{
     background-color: white;
     padding-top: 1vw;
@@ -10,10 +11,13 @@ nav{
     background-color: white;
     border-radius: 10vw;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.7;
+    opacity: 1;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9999;
 }
 .iconImg{
     width: 1.5vw;
@@ -64,6 +68,7 @@ nav{
     vertical-align: center;
     margin-top: 0.8vw;
 }
+/*nav bar styling bottom*/
 body {
   background-image: url('homepage1.jpg');
   background-attachment: scroll;
@@ -80,7 +85,7 @@ html{
     margin: 0;
 }
 #topSection{
-    height: 10vw;
+    height: 15vw;
     background-color: white;
     display: flex;
     align-items: center;
