@@ -12,9 +12,14 @@ body {
     background-repeat: no-repeat;
     background-size: 100% auto;
     overflow-x: hidden;
-  }
-html{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+html, body{
     margin: 0;
+    padding:0;
+    box-sizing: border-box;
 }
 #topSection{
   height: 11vw;
@@ -88,12 +93,12 @@ html{
     margin: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 50vw;
+    align-items: flex-start;
+    flex: 1 0 auto;
     gap: 5vw;
 }
 #selectionSection{
-  margin-top: 10vw;
+  margin-top: 5vw;
 }
 .options{
     margin-left: 8vw;
