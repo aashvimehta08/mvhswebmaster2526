@@ -87,4 +87,7 @@ p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
     height: 3vw;
     align-items: center;
 }
+.social:hover{
+    background-color: #ffaa4c;
+}
 /*footer styling end*/
