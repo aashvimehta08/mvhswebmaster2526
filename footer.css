@@ -13,7 +13,7 @@ p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
     justify-content: space-between;
     align-items: center;
     gap:5vw;
-    
+    opacity: 0.8;
 }
 #footerTitle{
     font-size: 4vw;
