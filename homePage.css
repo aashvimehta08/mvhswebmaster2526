@@ -1,75 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
-/*nav bar styling start*/
-nav{
-    background-color: white;
-    padding-top: 1vw;
-}
-#navBar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 4vw;
-    background-color: white;
-    border-radius: 10vw;
-    width: 80%;
-    opacity: 1;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 9999;
-}
-.iconImg{
-    width: 1.5vw;
-    height: 1.5vw;
-    transition: transform 0.3s ease;
-}
-.icon:hover .iconImg{
-    transform: translateX(-3vw);
-}
-.icon:hover .line{
-    transform: translateX(-3vw);
-    opacity: 1;
-}
-.icon:hover .label{
-    opacity: 1;
-}
-.icon{
-    position: relative;
-    width: 10%;
-    width: 1vw;
-    height: 1vw;
-    padding: 1vw;
-}
-#home, #homeLabel{
-    padding-left: 10vw;
-}
-#sources, #sourcesLabel{
-    padding-right: 10vw;
-}
-.line{
-    width: 1.5vw;
-    height: 0.2vw;
-    background-color: #FEB84E;
-    align-items: center;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    font-size: 1.2vw;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    width: 7vw;
-    color: black;
-    vertical-align: center;
-    margin-top: 0.5vw;
-}
-/*nav bar styling bottom*/
+@import url("nav.css");
+@import url("footer.css");
 body {
   background-image: url('homepage1.jpg');
   background-attachment: scroll;
@@ -250,75 +181,11 @@ p{
     background-color: blue;
     width: 50%;
     height: 80%;
+    margin-bottom: 3vw;
 }
 #joinTextSection{
     margin: 0;
     width: 50%;
     height: 80%;
     color:white;
-}
-#footerSection{
-    height: 15vw;
-    background-color: white;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap:5vw;
-}
-#logoSection{
-    margin: 0;
-    width: 30%;
-    height: 100%;
-}
-#footerLogo{
-    margin-left: 5vw;
-    margin-top: 2vw;
-    height: 10vw;
-    width:15vw;
-}
-#contactUsSection{
-    margin: 0;
-    width: 30%;
-    height: 100%;
-}
-#socialsSection{
-    margin: 0;
-    width: 15%;
-    height: 85%;
-    position: relative;
-    margin: auto;
-}
-.footerText{
-    margin-left: 5vw;
-}
-.social{
-    height: 5vw;
-    width: 5vw;
-    background-color: #FEB84E;
-    border-radius: 100%;
-    position: absolute;
-}
-.top {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.left {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.right {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-
-.bottom {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }

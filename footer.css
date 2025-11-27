@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
+/*footer styling start*/
+p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
+ font-family: "Arya", sans-serif;
+ font-weight: 400;
+ font-style: normal;
+}
+#footerSection{
+    height: 17vw;
+    background-color: white;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5vw;
+}
+#footerTitle{
+    font-size: 4vw;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.footerInfo{
+    font-size: 1.5vw;
+}
+#logoSection{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+}
+#footerLogo{
+    margin-left: 5vw;
+    margin-top: 2vw;
+    height: 10vw;
+    width:15vw;
+}
+#contactUsSection{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+}
+#socialsSection{
+    margin: 0;
+    width: 15%;
+    height: 85%;
+    position: relative;
+    margin: auto;
+}
+.footerText{
+    margin: 0;
+    margin-left: 5vw;
+}
+.social{
+    height: 5vw;
+    width: 5vw;
+    background-color: #FEB84E;
+    border-radius: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.socialIcon{
+    width: 3vw;
+    height: 3vw;
+    align-items: center;
+}
+/*footer styling end*/
