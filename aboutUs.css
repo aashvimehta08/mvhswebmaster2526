@@ -149,14 +149,15 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: auto;
+    height: 50vw;
     gap: 1vw;
 }
 #faqImgSection{
     margin-right: 5vw;
-    width: 37vw;
-    height: 37vw;
-    margin-top: 6vw;
+    width: 35vw;
+    height: 35vw;
+    margin-top: 3vw;
+    margin-bottom: 4vw;
 }
 #faqImg{
     width: 100%;
