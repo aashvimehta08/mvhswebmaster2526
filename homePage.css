@@ -88,7 +88,7 @@ html{
     margin: 0;
 }
 #topSection{
-    height: 15vw;
+    height: 11vw;
     background-color: white;
     display: flex;
     align-items: center;
@@ -96,13 +96,14 @@ html{
     gap: 2vw;
 }
 #welcomeText{
-    margin: 0;
+    margin-top: 4vw;
     text-align: center;
     line-height: 10vw;
     letter-spacing: 4vw;
 }
 #topLogo{
     height: 6vw;
+    margin-top: 4vw;
 }
 #videoSection{
     position: relative;
@@ -164,6 +165,17 @@ html{
     margin-left: 8vw;
     color:white;
 }
+.spacerSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+ }
+ .spacer{
+    width: 70vw;
+    height: auto;
+    display: block;
+ }
 #highlightSection{
     margin: 0;
     display: flex;
