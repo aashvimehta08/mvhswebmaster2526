@@ -7,7 +7,7 @@ p,h1,summary{
   font-style: normal;
 }
 body {
-    background-image: url('homepage1.jpg');
+    background-image: url('long-bg.png');
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -184,6 +184,9 @@ html{
     padding: 2%;
     margin-bottom: 1vw;
     height: 8vw;
+    height: auto;          
+    min-height: 3vw;      
+    overflow: hidden;
 }
 #faqTitle{
     margin-left: 1vw;
