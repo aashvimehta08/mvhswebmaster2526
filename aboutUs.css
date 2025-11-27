@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
+/*nav bar styling start*/
+nav{
+    background-color: white;
+    padding-top: 1vw;
+}
+#navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4vw;
+    background-color: white;
+    border-radius: 10vw;
+    width: 80%;
+    opacity: 1;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9999;
+}
+.iconImg{
+    width: 1.5vw;
+    height: 1.5vw;
+    transition: transform 0.3s ease;
+}
+.icon:hover .iconImg{
+    transform: translateX(-3vw);
+}
+.icon:hover .line{
+    transform: translateX(-3vw);
+    opacity: 1;
+}
+.icon:hover .label{
+    opacity: 1;
+}
+.icon{
+    position: relative;
+    width: 10%;
+    width: 1vw;
+    height: 1vw;
+    padding: 1vw;
+}
+#home, #homeLabel{
+    padding-left: 10vw;
+}
+#sources, #sourcesLabel{
+    padding-right: 10vw;
+}
+.line{
+    width: 1.5vw;
+    height: 0.2vw;
+    background-color: #FEB84E;
+    align-items: center;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 1.2vw;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 7vw;
+    color: black;
+    vertical-align: center;
+    margin-top: 0.8vw;
+}
+/*nav bar styling bottom*/
+p,h1{
+  font-family: "Arya", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+    background-image: url('Short\ bg.png');
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    overflow-x: hidden;
+    margin: 0;
+  }
+html{
+    margin: 0;
+}
+#topSection{
+  height: 11vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+#topLogo{
+  height: 6vw;
+  margin-top: 4vw;
+}
+#aboutUsText{
+  text-align: center;
+  line-height: 10vw;
+  letter-spacing: 2vw;
+  margin-top: 4vw;
+}
+#imageSection{
+    position: relative;
+    height: 50vw;
+    width: 100%;
+    overflow: hidden;
+    background-color: #1A3869;
+    opacity: 0.6;
+}
+#aboutUsImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+#mainTitleSection{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 1vw;
+    letter-spacing: 2vw;
+    opacity: 0.7;
+}
+#name{
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 5vw;
+}
