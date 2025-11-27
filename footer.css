@@ -7,13 +7,12 @@ p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
 }
 #footerSection{
     height: 17vw;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap:5vw;
-    opacity: 0.9;
 }
 #footerTitle{
     font-size: 4vw;
