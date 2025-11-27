@@ -121,16 +121,17 @@ html{
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 .event{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
   height: 25vw;
   border-radius: 10%;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 .eventTitle {
     font-size: 2vw;
@@ -147,7 +148,7 @@ html{
 }
   .eventText {
     font-size: 1vw;
-    width: 17vw;
+    width: 16vw;
     text-align: center;
     margin-top: 0.8vw;
     line-height: 1.4vw;
