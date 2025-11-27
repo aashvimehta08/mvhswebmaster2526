@@ -192,7 +192,18 @@ html{
    border-radius: 0.7vw;
    background-color: #222958;
    box-shadow: inset 0 0 0 0.12vw #FFAA4C;
+}
+.spacerSection{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
 
+.spacer{
+   width: 70vw;
+   height: auto;
+   display: block;
 }
 .whatsNext{
    height: 10vw;
