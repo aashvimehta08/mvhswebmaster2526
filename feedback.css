@@ -63,10 +63,10 @@ html{
    height: 40vw;
    border-radius: 5vw;
    width: 60vw;
-   border-style: solid;
+   border-style: none;
    border-color: #222958;
    border-width: 0.25vw;
-   background-color: rgba(255, 255, 255, 0.5);
+   background-color: rgba(255, 255, 255, 0.8);
 }
 #selectSection{
    height: 3vw;
@@ -78,7 +78,7 @@ html{
    flex-direction: column;
    border-style: solid;
    border-color: #222958;
-   border-width: 0.15vw;
+   border-width: 0.1vw;
    background-color: rgba(255, 255, 255, 0);
    font-size: 1vw;
    color: #222958;
@@ -91,7 +91,7 @@ html{
    border-radius: 1vw;
    border-style: solid;
    border-color: #222958;
-   border-width: 0.15vw;
+   border-width: 0.1vw;
    background-color: rgba(255, 255, 255, 0);
    font-size: 1vw;
    color: #222958;
@@ -105,7 +105,7 @@ html{
    resize: none;
    border-style: solid;
    border-color: #222958;
-   border-width: 0.15vw;
+   border-width: 0.1vw;
    background-color: rgba(255, 255, 255, 0);
    font-size: 1vw;
    color: #222958;
