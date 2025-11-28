@@ -14,6 +14,11 @@ body {
    overflow-x: hidden;
    margin: 0;
  }
+@media (max-width: 768px) {
+    body {
+      background-image: url('long-bg.png');
+    }
+}
 html{
    margin: 0;
 }
