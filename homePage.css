@@ -190,6 +190,7 @@ html{
     background-position: center;
     transform: rotate(-45deg);
     opacity: 0.9;
+    transition: opacity 0.3s ease;
 }
 #img1{
     background-image: url('couseling.png');
