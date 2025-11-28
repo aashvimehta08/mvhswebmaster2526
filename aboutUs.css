@@ -247,3 +247,6 @@ html{
     border-radius: 1vw;
     border: solid;
 }
+.askButton:hover{
+    background-color: #FEB84E;
+}
