@@ -144,7 +144,7 @@ html{
     transform: rotate(45deg);
     overflow: hidden;
     margin-top: 5vw;
-    background-image: linear-gradient(to right, #97ADBA, #38708F, #04567D);
+    background-image: linear-gradient(to right, #38708F, #04567D, #233A69);
     transition: transform 0.3s ease;
     border-radius: 2vw;
 }
