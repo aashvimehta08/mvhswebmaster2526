@@ -59,7 +59,7 @@ html{
     width: 100%;
     padding: 1vw;
     letter-spacing: 2vw;
-    opacity: 0.7;
+    opacity: 1;
 }
 #name, #slogan{
     margin: 0;
