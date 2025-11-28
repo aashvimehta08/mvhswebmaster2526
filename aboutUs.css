@@ -82,6 +82,9 @@ html{
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    border: solid, 0.2vw;
+    border-color: #FEB84E;
+    
 }
 #whereFromTextSection{
     margin-left: 4vw;
@@ -97,8 +100,9 @@ html{
 #whereFromTitle{
     margin-left: 1vw;
     color: #222958;
-    font-weight: 1000;
     font-size: 3vw;
+    font-weight: 1000;
+    letter-spacing: 0.5vw;
 }
 #whereFromText{
     margin-right: 8vw;
@@ -115,7 +119,7 @@ html{
 }
 #otherImgSection{
     margin-left: 7vw;
-    margin-bottom: 6vw;
+    margin-bottom: 2vw;
     width: 30vw;
     height: 25vw;
 }
@@ -123,6 +127,8 @@ html{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: solid, 0.2vw;
+    border-color: #FEB84E;
 }
 #otherTextSection{
     margin-right: 4vw;
@@ -133,10 +139,12 @@ html{
     border-radius: 2.5vw;
 }
 #otherTitle{
-    margin-left: 15vw;
+    margin-left: 13vw;
     color: #222958;
     font-size: 3vw;
+    font-weight: 1000;
     margin-bottom: 0;
+    letter-spacing: 0.5vw;
 }
 #otherText{
     margin-left: 1vw;
@@ -163,6 +171,8 @@ html{
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    border: solid, 0.2vw;
+    border-color: #FEB84E;
 }
 #faqTextSection{
     margin-left: 4vw;
@@ -194,6 +204,7 @@ html{
     font-weight: 1000;
     font-size: 3vw;
     margin-bottom: 0;
+    letter-spacing: 0.5vw;
 }
 .faqItemTitle{
     color: #1A3869;
@@ -204,4 +215,35 @@ html{
     color: #1A3869;
     font-size: 1vw; 
     margin-top: 0;
+}
+
+#stillHaveQuestionsSection{
+   height: 15vw;
+   width: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   margin-bottom: 4vw;
+}
+#questionTitle{
+    margin: 0;
+    color: white;
+    font-size: 3vw;
+    letter-spacing: 1vw;
+}
+.askButton{
+    height: 4vw;
+    width: 40vw;
+    font-size: 2vw;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #222958;
+    letter-spacing: 0.5vw;
+    border-radius: 1vw;
+    border: solid;
 }
