@@ -290,9 +290,10 @@ p{
     border-radius: 1vw;
     cursor: pointer;
     position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
 #learnMoreButton::before {
@@ -303,6 +304,7 @@ p{
   width: 100%;
   height: 100%;
   background-color: white; /* Wipe color */
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   transition: left 0.5s ease;
   z-index: 0;
 }
