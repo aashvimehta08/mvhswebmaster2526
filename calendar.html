@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="calendar.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+ <title>Calendar</title>
+</head>
+<body>
+  <nav>
+    <div id="navBar">
+      <div id="home" class="icon">
+        <a href="homePage.html"><img id="homeIcon" class="iconImg" src="home.png">
+        <div class="line"></div>
+        <p id="homeLabel" class="label">Home</p></a>
+      </div>
+      <div id="directory" class="icon">
+        <a href="sportsDirectory.html"><img id="directoryIcon" class="iconImg" src="directory.png">
+        <div class="line"></div>
+        <p id="directoryLabel" class="label">Directory</p></a>
+      </div>
+      <div id="about" class="icon">
+        <a href="aboutus.html"><img id="aboutIcon" class="iconImg" src="about.png">
+        <div class="line"></div>
+        <p id="aboutLabel" class="label">About Us</p></a>
+      </div>
+      <div id="feedback" class="icon">
+        <a href="feedback.html"><img id="feedbackIcon" class="iconImg" src="feedback.png">
+        <div class="line"></div>
+        <p id="feedbackLabel" class="label">Feedback</p></a>
+      </div>
+      <div id="calendar" class="icon">
+        <a href="calendar.html"><img id="calendarIcon" class="iconImg" src="calendar.png">
+        <div class="line"></div>
+        <p id="calendarLabel" class="label">Calendar</p></a>
+      </div>
+      <div id="sources" class="icon">
+        <a href="sources.html"><img id="sourcesIcon" class="iconImg" src="sources.png">
+        <div class="line"></div>
+        <p id="sourcesLabel" class="label">Sources</p></a>
+      </div>
+    </div>
+  </nav>
+    <div id="topSection">
+       <img id="topLogo" src="logo.png" alt="logo">
+       <h1 id="calendarText">CALENDAR</h1>
+   </div>
+</body>
+<div class="calendar-container">
+<div class="calendar">
+    <div class="header">
+        <button id="prevBtn">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="monthYear" id="monthYear"></div>
+        <button id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="days">
+        <div class="day">Sun</div>
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+        <div class="day">Fri</div>
+        <div class="day">Sat</div>
+    </div>
+    <div class="dates" id="dates"></div>
+</div>
+<script src="calendar.js"></script>
+</calendar>
+
+<div id="eventSection">
+    <h2>Events</h2>
+    <div id="eventList">Click a day to see events</div>
+</div>
+
+
+
+    <footer>
+    <div id="footerSection">
+      <div id="contactUsSection">
+        <h2 id="footerTitle" class="footerText">CONTACT US</h2>
+        <p id="phoneNumber" class="footerText footerInfo">720-487-3920</p>
+        <p id="email" class="footerText footerInfo">milehighmovement@gmail.com</p>
+        <p id="address" class="footerText footerInfo">3782 Movement Circle</p>
+      </div>
+      <div id="socialsSection">
+        <div id="faceboockCircle" class="social top">
+          <img id="facebookIcon" class="socialIcon" src="facebook.png">
+        </div>
+        <div id="instagramCircle" class="social left">
+          <img id="instagramIcon" class="socialIcon" src="instagram.png">
+        </div>
+        <div id="twitterCircle" class="social right">
+          <img id="twitterIcon" class="socialIcon" src="twitter-alt.png">
+        </div>
+        <div id="linkedinCircle" class="social bottom">
+          <img id="linkedinIcon" class="socialIcon" src="linkedin.png">
+        </div>
+      </div>
+      <div id="logoSection">
+        <img id="footerLogo" src="logo.png" alt="logo">
+      </div>
+    </div>
+  </footer>
+</html>
