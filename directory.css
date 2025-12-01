@@ -16,6 +16,11 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+@media (max-width: 768px) {
+    body {
+      background-image: url('long-bg.png');
+    }
+}
 html, body{
     margin: 0;
     padding:0;

@@ -58,6 +58,7 @@ p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.2s ease;
 }
 .top {
   top: 0;
