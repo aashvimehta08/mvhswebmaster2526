@@ -65,3 +65,54 @@ a{
 a:hover{
     text-decoration: underline;
 }
+button{
+    display: block;
+    margin: 4vw auto;
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    color: white;
+    background-color: #04567D;
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Wipe color */
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+button:hover::before {
+  left: 0; /* Slide in */
+}
+
+button:hover {
+  color: black;          /* Changes text color when white background slides in */
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button span {
+  position: relative;
+  z-index: 2;
+}
+button:hover span::after {
+  content: " >";
+  position: relative;
+}
