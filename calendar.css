@@ -105,13 +105,14 @@ p,h1,h2,h3, .date, .day, .monthYear, .eventsListText{
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.date:hover,
 .date.active {
     background: #ffb850;
     color: white;
 }
 .date:hover{
     transform: scale(1.2);
+    background: #ffb850;
+    color: white;
 }
 
 .date.inactive {
@@ -121,9 +122,20 @@ p,h1,h2,h3, .date, .day, .monthYear, .eventsListText{
 .date.inactive:hover {
     color: white;
 }
-
-
-
+.date.selected {
+    background: #ffb850 !important;
+    color: white !important;
+    transform: scale(1.1);
+}
+.date.today {
+    border: 2px solid #ffb850;
+    background: none !important;
+    color: black;
+}
+.date.selected {
+    background: #ffb850;
+    color: white;
+}
 h1,h2,h3,p{
     font-family: "Arya", sans-serif;
     font-weight: 400;

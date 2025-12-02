@@ -284,7 +284,7 @@ const updateCalendar = () => {
     for (let i = 1; i <= totalDays; i++) {
         const date = new Date(currentYear, currentMonth, i);
         const dateKey = date.toISOString().split('T')[0];
-        const activeClass = date.toDateString() === new Date().toDateString() ? 'active' : '';
+        const activeClass = date.toDateString() === new Date().toDateString() ? 'today' : '';
         const eventClass = events[dateKey] ? 'has-event' : '';
         datesHTML += `<div class="date ${activeClass} ${eventClass}" data-date="${dateKey}">${i}</div>`;
     }
@@ -310,6 +310,12 @@ nextBtn.addEventListener('click', () => {
 
 datesElement.addEventListener('click', (e) =>{
     if (e.target.classList.contains('date')) {
+        // Remove highlight from previously selected date (not today)
+        document.querySelectorAll('.date.selected').forEach(d => d.classList.remove('selected'));
+
+        // Add highlight to the clicked date
+        e.target.classList.add('selected');
+
         const dateKey = e.target.dataset.date;
         const eventList = document.getElementById('eventList');
         
