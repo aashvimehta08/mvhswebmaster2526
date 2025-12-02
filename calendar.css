@@ -123,13 +123,13 @@ p,h1,h2,h3, .date, .day, .monthYear, .eventsListText{
     color: white;
 }
 .date.selected {
-    background: #ffb850 !important;
-    color: white !important;
+    background: #ffb850;
+    color: white;
     transform: scale(1.1);
 }
 .date.today {
-    border: 2px solid #ffb850;
-    background: none !important;
+    border: 0.2vw solid #ffb850;
+    background: none;
     color: black;
 }
 .date.selected {
