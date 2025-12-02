@@ -38,6 +38,7 @@ nav{
     width: 10%;
     width: 1vw;
     height: 1vw;
+    margin-top: 0.6vw;
 }
 .icon {
     position: relative;
@@ -73,7 +74,7 @@ nav{
     width: 7vw;
     color: black;
     vertical-align: center;
-    margin-top: 0.2vw;
+    margin-top: 0vw;
     margin-left: 1vw;
 }
 /*nav bar styling bottom*/
