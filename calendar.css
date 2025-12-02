@@ -39,11 +39,6 @@ p,h1,h2,h3, .date, .day, .monthYear, .eventsListText{
     opacity: 0.8;
 }
 
-.date.has-event {
-  border: 2px solid #233A69;
-}
-
-
 .header {
     display: flex;
     justify-content: space-between;
