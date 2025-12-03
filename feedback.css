@@ -73,6 +73,7 @@ html{
    border-color: #222958;
    border-width: 0.25vw;
    background-color: rgba(255, 255, 255, 0.8);
+   border: solid, 0.2vw #FEB84E;
 }
 #selectSection{
    height: 3vw;

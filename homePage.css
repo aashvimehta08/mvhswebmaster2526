@@ -81,17 +81,20 @@ body, html{
     gap: 5vw;
 }
 #aboutUsImgSection{
-    margin: 0;
-    width: 50%;
-    height: 80%;
+    margin: auto;
+    width: 40vw;
+    height: 40vw;
     background-color: #1A3869;
-    opacity: 0.8;
+    border-radius: 50%;
 }
 #aboutUsImg{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.7;
+    border-radius: 50%;
+    border: solid, 0.2vw;
+    border-color: #FEB84E;
+    opacity: 1;
 }
 #aboutUsTextSection{
     margin: 0;

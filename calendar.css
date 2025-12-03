@@ -37,6 +37,7 @@ p,h1,h2,h3, .date, .day, .monthYear, .eventsListText{
     background: white;
     border-radius: 2vw;
     opacity: 0.8;
+    border: solid, 0.2vw #FEB84E;
 }
 
 .header {
