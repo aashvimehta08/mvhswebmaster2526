@@ -60,10 +60,7 @@ body, html{
 .text{
     text-align: center;
     margin: 0;
-}
-ul{
-    list-style-type: none;
-    padding-left: 2vw;
+    font-size: 1.5vw;
 }
 a{
     text-decoration: none;

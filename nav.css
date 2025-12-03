@@ -71,10 +71,11 @@ nav{
     font-size: 1.2vw;
     opacity: 0;
     transition: opacity 0.3s ease;
-    width: 7vw;
+    width: 8vw;
     color: black;
     vertical-align: center;
     margin-top: 0vw;
     margin-left: 1vw;
+    word-spacing: 0px;
 }
 /*nav bar styling bottom*/
