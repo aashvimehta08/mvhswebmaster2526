@@ -78,7 +78,7 @@ body, html{
     justify-content: space-between;
     align-items: center;
     height: 50vw;
-    gap: 5vw;
+    gap: 0vw;
 }
 #aboutUsImgSection{
     margin: auto;
@@ -102,7 +102,7 @@ body, html{
     height: 80%;
 }
 #aboutUsTitle, #aboutUsText{
-    margin-left: 8vw;
+    margin-left: 4vw;
     color:white;
 }
 #aboutUsTitle{
@@ -266,7 +266,8 @@ h2{
 p{
     font-size: 1.2vw;
     padding-right: 2vw;
-    word-spacing: 0.5vw;
+    word-spacing: 0.3vw;
+    letter-spacing: 0.1vw;
 }
 #joinSection{
     height: 30vw;
@@ -281,6 +282,8 @@ p{
     margin: 0;
     color:white;
     text-align: center;
+    padding: 0 2vw;
+    height: 10vw;
 }
 #learnMoreButton{
     display: block;
