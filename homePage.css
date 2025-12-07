@@ -71,6 +71,11 @@ body, html{
     z-index: 1000000000;
     font-size: 3vw;
     opacity: 1;
+    font-weight: 800;
+}
+#slogan{
+    font-size: 2vw;
+    font-weight: 400;
 }
 #aboutUsSection{
     margin: 0;
