@@ -73,6 +73,7 @@ html, body{
   border-radius: 10%;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.7);
+  width: 20vw;
 }
 .eventTitle {
     font-size: 2vw;
@@ -94,7 +95,39 @@ html, body{
     margin-top: 0.8vw;
     line-height: 1.4vw;
   }
-
+@media (max-width: 768px) {
+    .eventsGrid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, auto);
+        margin: 0;
+        row-gap: 0;
+        column-gap: 0;
+        width: 60%;
+        align-items: center;
+    }
+    .event{
+        width: 45vw;
+        height: 52vw;
+        margin-bottom: 5vw;
+    }
+    .eventsGrid .event:first-child{
+      margin-top: 5vw;
+    }
+    .eventImg{
+        width: 35vw;
+    }
+    .eventText{
+        width: 34vw;
+        font-size: 3vw;
+        line-height: 2.8vw;
+    }
+    .eventTitle{
+        font-size: 5vw;
+    }
+    .selectionButton{
+        font-size: 3vw !important;
+    }
+}
 #mainContent{
     margin: 0;
     display: flex;
