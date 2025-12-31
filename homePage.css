@@ -34,6 +34,7 @@ body, html{
     text-align: center;
     line-height: 10vw;
     letter-spacing: 3vw;
+    font-size: 2.1vw;
 }
 #topLogo{
     height: 6vw;
@@ -113,6 +114,9 @@ body, html{
 #aboutUsTitle{
     font-size: 3vw;
     letter-spacing: 3vw;
+}
+#aboutUsText{
+    font-size: 1.5vw;
 }
 .spacerSection{
     display: flex;
@@ -339,5 +343,52 @@ p{
 #learnMoreButton:hover span::after {
   content: " >";
   position: relative;
+}
+@media (max-width: 768px) {
+    body{
+        background-color: #002951;
+    }
+    #topSection{
+        height: 15vw;
+    }
+    #welcomeText{
+        font-size: 3vw;
+        letter-spacing: 3vw;
+        margin-top: 6vw;
+    }
+    #topLogo{
+        height: 7vw;
+    }
+    #videoSection{
+        height: 70vw;
+    }
+    #aboutUsSection{
+        height: 80vw;
+    }
+    #aboutUsImgSection{
+        width: 50vw;
+        height: 50vw;
+        top:50%;
+        bottom:50%;
+        margin:auto;
+    }
+    #aboutUsTitle{
+        font-size: 4vw;
+    }
+    #aboutUsText{
+        font-size: 2vw;
+    }
+    #joinTitle{
+        font-size: 3vw;
+        letter-spacing: 4vw;
+        text-align: center;
+        margin-right: -4vw;
+    }
+    #joinTextSection{
+        height: 30vw;
+    }
+    #joinText{
+        font-size: 2vw;
+    }
 }
 
