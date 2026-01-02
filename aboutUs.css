@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
 @import url('nav.css');
 @import url("footer.css");
+@import url("chat.css");
 p,h1,summary{
   font-family: "Arya", sans-serif;
   font-weight: 400;
@@ -247,6 +248,7 @@ html{
     letter-spacing: 0.5vw;
     border-radius: 1vw;
     border: solid;
+    border-width: 0.15vw;
     position: relative;
     overflow: hidden;
     z-index: 1;
