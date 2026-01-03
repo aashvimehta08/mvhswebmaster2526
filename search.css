@@ -175,7 +175,7 @@ html, body{
 }
 
 /* Search input field */
-input {
+#searchInput {
     width: 85%;
     padding: 0.8vw 1vw;
     margin-top: 2vw;
@@ -190,7 +190,7 @@ input {
     transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
-input:focus {
+#searchInput:focus {
     border-color: #04567D;
     box-shadow: 0 0 0 2px rgba(4, 86, 125, 0.2);
 }
