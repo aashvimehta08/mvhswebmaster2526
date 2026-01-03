@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
+@import url('nav.css');
+@import url("footer.css");
+@import url("chat.css");
+p,h1{
+  font-family: "Arya", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+    background-image: url('Short\ bg.png');
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+@media (max-width: 768px) {
+    body {
+      background-image: url('long-bg.png');
+    }
+}
+html, body{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+#topSection{
+  height: 11vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+#topLogo{
+  height: 6vw;
+  margin-top: 4vw;
+}
+#directoryText{
+  text-align: center;
+  line-height: 10vw;
+  letter-spacing: 2vw;
+  margin-top: 4vw;
+  font-size: 2.5vw;
+}
+#eventsSection{
+    width: 100%;
+}
+.eventsGrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 4vw);
+    width: 70%;
+    row-gap: 25vw;
+    column-gap: 5vw;
+    height: 80vw;
+    margin-left: 5vw;
+}
+.eventContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.event{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25vw;
+  border-radius: 10%;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 20vw;
+}
+.eventTitle {
+    font-size: 2vw;
+    text-align: center;
+    letter-spacing: 0.3vw;
+    line-height: 1.8vw;
+  }
+.eventImg{
+    display: flex;
+    height: auto;
+    width: 17vw;
+    border-radius: 1vw;
+    align-items: center;
+}
+  .eventText {
+    font-size: 1vw;
+    width: 16vw;
+    text-align: center;
+    margin-top: 0.8vw;
+    line-height: 1.4vw;
+  }
+@media (max-width: 768px) {
+    .eventsGrid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, auto);
+        margin: 0;
+        row-gap: 0;
+        column-gap: 0;
+        width: 60%;
+        align-items: center;
+    }
+    .event{
+        width: 45vw;
+        height: 52vw;
+        margin-bottom: 5vw;
+    }
+    .eventsGrid .event:first-child{
+      margin-top: 5vw;
+    }
+    .eventImg{
+        width: 35vw;
+    }
+    .eventText{
+        width: 34vw;
+        font-size: 3vw;
+        line-height: 2.8vw;
+    }
+    .eventTitle{
+        font-size: 5vw;
+    }
+    .selectionButton{
+        font-size: 3vw !important;
+    }
+}
+#mainContent{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 auto;
+    gap: 0vw;
+}
+#selectionSection{
+  margin-top: 5vw;
+}
+.options{
+    margin-left: 8vw;
+    margin-bottom: 4vw;
+}
+.selectionButton{
+    background-color: transparent;
+    border: transparent;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.3vw;
+    font-size: 1.5vw;
+    text-decoration: none;
+    
+}
+.selectionButton:hover{
+    text-shadow: 0 0 1vw #2B85A7;
+}
+/* -------------------- SEARCH PAGE STYLES -------------------- */
+
+/* Hide all events by default */
+.event {
+    display: none;          /* hide initially */
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Class to show visible events */
+.event.visible {
+    display: flex;          /* match original flex layout */
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Search input field */
+input {
+    width: 85%;
+    padding: 0.8vw 1vw;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    margin-left: 5vw;
+    display: block;
+    font-size: 1.1vw;
+    font-family: inherit;
+    border-radius: 0.6vw;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    border-color: #04567D;
+    box-shadow: 0 0 0 2px rgba(4, 86, 125, 0.2);
+}
+
+
+/* Smooth hide/show for events */
+.event {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.event.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+/* Mobile adjustments for search input */
+@media (max-width: 768px) {
+    #searchInput {
+        width: 95%;
+        font-size: 4vw;
+        padding: 3vw;
+        border-radius: 3vw;
+    }
+}
+
+

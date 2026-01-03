@@ -71,7 +71,7 @@ a{
 a:hover{
     text-decoration: underline;
 }
-button{
+.pdfbutton{
     display: block;
     margin: 0.5vw auto;
     padding: 0.7vw 1.5vw;
@@ -88,7 +88,7 @@ button{
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
-button::before {
+.pdfbutton::before {
   content: "";
   position: absolute;
   top: 0;
@@ -101,24 +101,24 @@ button::before {
   z-index: 0;
 }
 
-button:hover::before {
+.pdfbutton:hover::before {
   left: 0; /* Slide in */
 }
 
-button:hover {
+.pdfbutton:hover {
   color: black;          /* Changes text color when white background slides in */
   transform: scale(1.05);
 }
 
-button:active {
+.pdfbutton:active {
   transform: scale(0.95);
 }
 
-button span {
+.pdfbutton span {
   position: relative;
   z-index: 2;
 }
-button:hover span::after {
+.pdfbutton:hover span::after {
   content: " >";
   position: relative;
 }
