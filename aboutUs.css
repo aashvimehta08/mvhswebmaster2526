@@ -303,24 +303,54 @@ html{
     }
     #whereFromTextBox{
         height: 20vw;
+        padding: 3%;
     }
     #whereFromTitle{
-        font-size: 3.5vw;
-        margin-top: 0.5vw;
+        font-size: 4vw;
+        margin-top: 0.1vw;
     }
     #whereFromText{
-        font-size: 1.35vw;
-        margin-right: 3vw;
+        font-size: 1.6vw;
+        margin-right: 2.5vw;
+        margin-top: 0vw;
+        margin-left: 0.5vw;
+        line-height: 2.5vw;
+    }
+    #whereFromImgSection{
+        height: 33vw;
+        width: 33vw;
     }
     #otherTextSection{
-        height: 27vw;
+        height: 35vw;
+        padding: 0.5%;
     }
     #otherTitle{
-        font-size: 3vw;
+        font-size: 3.2vw;
     }
     #otherText{
-        font-size: 1.1vw;
+        font-size: 1.6vw;
         margin-right: 0.5vw;
+        line-height: 2.5vw;
+        margin-top: 0.1vw;
     }
+    #otherImgSection{
+        height: 30vw;
+    }
+    #faqImgSection{
+        height: 40vw;
+        width: 40vw;
+    }
+    #faqTextSection{
+        height: 51vw;
+        margin-top: 25vw;
+    }
+    #faqTitle{
+        font-size: 3.5vw;
+    }
+    .faqItemTitle{
+        font-size: 1.65vw;
+    }
+
+    
 
 }
