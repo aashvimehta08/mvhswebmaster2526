@@ -206,4 +206,8 @@ html{
    #topLogo{
       height: 7vw;
   }
+  .submitButton{
+      font-size: 2vw;
+      width: 30vw;
+  }
 }
