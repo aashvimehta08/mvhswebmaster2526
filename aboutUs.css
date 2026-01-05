@@ -289,3 +289,38 @@ html{
     content: " >";
     position: relative;
 }
+@media (max-width: 768px){
+    #topSection{
+        height: 15vw;
+    }
+    #aboutUsText{
+        font-size: 3vw;
+        letter-spacing: 3vw;
+        margin-top: 6vw;
+    }
+    #topLogo{
+        height: 7vw;
+    }
+    #whereFromTextBox{
+        height: 20vw;
+    }
+    #whereFromTitle{
+        font-size: 3.5vw;
+        margin-top: 0.5vw;
+    }
+    #whereFromText{
+        font-size: 1.35vw;
+        margin-right: 3vw;
+    }
+    #otherTextSection{
+        height: 27vw;
+    }
+    #otherTitle{
+        font-size: 3vw;
+    }
+    #otherText{
+        font-size: 1.1vw;
+        margin-right: 0.5vw;
+    }
+
+}

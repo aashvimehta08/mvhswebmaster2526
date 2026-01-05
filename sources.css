@@ -122,3 +122,19 @@ a:hover{
   content: " >";
   position: relative;
 }
+@media (max-width: 768px){
+  body{
+    background-image: url('long-bg.png');
+  }
+  #topSection{
+      height: 15vw;
+  }
+  #sourcesText{
+      font-size: 3vw;
+      letter-spacing: 3vw;
+      margin-top: 6vw;
+  }
+  #topLogo{
+    height: 7vw;
+}
+}
