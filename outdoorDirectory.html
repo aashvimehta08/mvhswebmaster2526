@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="directory.css">
   <script src="chat.js"></script>
+  <script src="dropdown.js" defer></script>
 </head>
 <body>
   <nav>
@@ -57,6 +58,21 @@
     <div id="topSection">
         <img id="topLogo" src="logo.png" alt="logo">
         <h1 id="directoryText">DIRECTORY</h1>
+    </div>
+
+    <div id="filter">
+      <select id="filterDropdown">
+        <option value="../searchDirectory.html">Search</option>
+        <option value="../sportsDirectory.html" >Sports</option>
+        <option value="../fitnessDirectory.html">Fitness</option>
+        <option value="../culinaryDirectory.html">Culinary</option>
+        <option value="../kidsDirectory.html">Kids</option>
+        <option value="../seasonalDirectory.html">Seasonal</option>
+        <option value="../wellnessDirectory.html">Wellness</option>
+        <option value="../communityDirectory.html">Community</option>
+        <option value="../socialDirectory.html">Social</option>
+        <option value="../outdoorDirectory.html" selected>Outdoor</option>
+      </select>
     </div>
 
     <div id="mainContent">

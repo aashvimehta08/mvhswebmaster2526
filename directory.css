@@ -2,7 +2,7 @@
 @import url('nav.css');
 @import url("footer.css");
 @import url("chat.css");
-p,h1{
+p,h1, a{
   font-family: "Arya", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -91,41 +91,8 @@ html, body{
     margin-top: 0.8vw;
     line-height: 1.4vw;
   }
-@media (max-width: 768px) {
-    body {
-      background-image: url('long-bg.png');
-    }
-    .eventsGrid {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(6, auto);
-        margin: 0;
-        row-gap: 0;
-        column-gap: 0;
-        width: 60%;
-        align-items: center;
-    }
-    .event{
-        width: 45vw;
-        height: 52vw;
-        margin-bottom: 5vw;
-    }
-    .eventsGrid .event:first-child{
-      margin-top: 5vw;
-    }
-    .eventImg{
-        width: 35vw;
-    }
-    .eventText{
-        width: 34vw;
-        font-size: 3vw;
-        line-height: 2.8vw;
-    }
-    .eventTitle{
-        font-size: 5vw;
-    }
-    .selectionButton{
-        font-size: 3vw !important;
-    }
+#filter{
+  display: none;
 }
 #mainContent{
     margin: 0;
@@ -147,10 +114,81 @@ html, body{
     border: transparent;
     color: rgb(0, 0, 0);
     letter-spacing: 0.3vw;
-    font-size: 1.5vw;
+    font-size: 2vw;
     text-decoration: none;
     
 }
 .selectionButton:hover{
     text-shadow: 0 0 1vw #2B85A7;
 }
+@media (max-width: 768px) {
+    body {
+      background-image: url('long-bg.png');
+    }
+    #topSection{
+        height: 20vw;
+    }
+    #directoryText{
+        font-size: 4vw;
+        letter-spacing: 3vw;
+        margin-top: 6vw;
+    }
+    #topLogo{
+        height: 8vw;
+    }
+    .eventsGrid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, auto);
+        margin: 0;
+        row-gap: 0;
+        column-gap: 0;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .event{
+        width: 75vw;
+        height: 90vw;
+        margin: auto;
+        margin-bottom: 8vw;
+        padding: 7vw 2vw;
+        border-radius: 12vw;
+    }
+    .eventsGrid .event:first-child{
+      margin-top: 5vw;
+    }
+    .eventImg{
+        width: 90%;
+    }
+    .eventText{
+        width: 90%;
+        font-size: 5vw;
+        line-height: 5vw;
+    }
+    .eventTitle{
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+    .selectionButton{
+        font-size: 3vw !important;
+    }
+    #selectionSection{
+      display: none;
+    }
+    #filter {
+    display: block;
+    margin: auto;
+    margin-top: 5vw;
+    }
+    #filterDropdown{
+      width: 40vw;
+      font-size: 3.5vw;
+      padding: 2vw;
+      border-radius: 10vw;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      border: none;
+      background-color: white;
+      opacity: 0.8;
+    }
+}
+
