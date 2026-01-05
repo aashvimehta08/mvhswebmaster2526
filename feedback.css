@@ -52,6 +52,7 @@ html{
 }
 .title{
    font-size: 2vw;
+   letter-spacing: 0.3vw;
    text-align: left;
    color:#222958;
 }
@@ -76,6 +77,7 @@ html{
    background-color: rgba(255, 255, 255, 0.8);
    border: solid, 0.2vw #FEB84E;
    transition: all 0.5s ease;
+   padding: 1%;
 }
 
 .feedbackForm:hover {
@@ -175,13 +177,6 @@ html{
    gap: 0.1vw;
    transition: all 0.3s ease;
 } 
-.whatsNext:hover {
-   background-color: rgba(255, 255, 255, 0.9);
-   transform: translateY(-0.4vw);
-   transition: all 0.3s ease;
-   box-shadow: 0 0 1.8vw rgba(0,0,0,0.2);
-   cursor: pointer;
-}
 
 .whatsNextTitle {
    margin: 0;       
@@ -205,5 +200,51 @@ html{
    }
    #topLogo{
       height: 7vw;
+  }
+  .title{
+   font-size: 3vw;
+  }
+  .feedbackForm{
+   height: 85vw;
+   width: 75vw;
+  }
+  #selectSection{
+   width: 71.5vw;
+   height: 8vw;
+   font-size: 2vw;
+  }
+  .IDinput{
+   width: 70vw;
+   height: 8vw;
+   font-size: 2vw;
+  }
+  .mainFeedbackInput{
+   width: 70vw;
+   height: 30vw;
+   font-size: 2vw;
+  }
+  #submitButton{
+   height: 6vw;
+   width: 5vw;
+   margin-top: 3vw;
+  }
+  .submitButton{
+   height: 6vw;
+   width: 30vw;
+   padding: 55%;
+   font-size: 3vw;
+  }
+  .spacer{
+   width: 80vw
+  }
+  .whatsNext{
+   height: 15vw;
+   width: 50vw;
+  }
+  .whatsNextTitle{
+   font-size: 3.5vw;
+  }
+  .whatsNextText{
+   font-size: 1.75vw;
   }
 }
