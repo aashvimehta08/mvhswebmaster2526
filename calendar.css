@@ -251,4 +251,7 @@ body, html{
     #eventList p{
       font-size: 3.5vw;
     }
+    #eventSection{
+        margin-bottom:49vw;
+    }
 }
