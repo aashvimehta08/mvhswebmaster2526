@@ -191,15 +191,15 @@ html{
       background-image: url('long-bg.png');
    }
    #topSection{
-       height: 15vw;
+       height: 18vw;
    }
    #feedbackText{
-       font-size: 3vw;
-       letter-spacing: 3vw;
+       font-size: 4vw;
+       letter-spacing: 4vw;
        margin-top: 6vw;
    }
    #topLogo{
-      height: 7vw;
+      height: 8vw;
   }
   .title{
    font-size: 3vw;
@@ -231,8 +231,8 @@ html{
   .submitButton{
    height: 6vw;
    width: 30vw;
-   padding: 55%;
    font-size: 3vw;
+   margin-top: 2vw;
   }
   .spacer{
    width: 80vw

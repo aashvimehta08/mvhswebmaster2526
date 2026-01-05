@@ -291,15 +291,15 @@ html{
 }
 @media (max-width: 768px){
     #topSection{
-        height: 15vw;
+        height: 18vw;
     }
     #aboutUsText{
-        font-size: 3vw;
-        letter-spacing: 3vw;
+        font-size: 4vw;
+        letter-spacing: 4vw;
         margin-top: 6vw;
     }
     #topLogo{
-        height: 7vw;
+        height: 8vw;
     }
     #whereFromTextBox{
         height: 20vw;
