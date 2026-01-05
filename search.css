@@ -246,10 +246,13 @@ html, body{
 @media (max-width: 768px) {
     
     #searchInput {
-        width: 95%;
+        width: 85%;
         font-size: 4vw;
         padding: 3vw;
         border-radius: 3vw;
+        margin: auto;
+        margin-top: 3vw;
+        margin-bottom: 6vw;
     }
 }
 

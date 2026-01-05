@@ -240,6 +240,7 @@ html{
   .whatsNext{
    height: 15vw;
    width: 50vw;
+   margin-bottom: 6vw;
   }
   .whatsNextTitle{
    font-size: 3.5vw;
