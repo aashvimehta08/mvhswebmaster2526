@@ -202,3 +202,16 @@ body, html{
   font-weight: 500;
   opacity: 0.8;
 }
+@media (max-width: 768px){
+    #topSection{
+        height: 15vw;
+    }
+    #calendarText{
+        font-size: 3vw;
+        letter-spacing: 3vw;
+        margin-top: 6vw;
+    }
+    #topLogo{
+        height: 7vw;
+    }
+}
