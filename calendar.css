@@ -67,6 +67,7 @@ p,h1,h2,h3, .date, .day, .monthYear, .eventsListText{
     height: 3vw;
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    font-size: 1.5vw;
 }
 .header button:hover {
     transform: scale(1.2);
@@ -203,6 +204,9 @@ body, html{
   opacity: 0.8;
 }
 @media (max-width: 768px){
+    body{
+        background-image: url("long-bg.png");
+    }
     #topSection{
         height: 15vw;
     }
@@ -213,5 +217,38 @@ body, html{
     }
     #topLogo{
         height: 7vw;
+    }
+    .calendar{
+        max-width: 90vw;
+        height: auto;
+        border-width: 0.5vw;
+    }
+    .dayText{
+        font-size: 3vw;
+    }
+    #monthYear{
+        font-size: 4vw;
+    }
+    .date{
+        width: 6vw;
+        height: 6vw;
+        font-size: 3vw; 
+    }
+    .header button{
+        width: 6vw;
+        height: 6vw;
+        font-size: 3vw; 
+        color: black;
+    }
+    .date.today {
+        border: 0.5vw solid #ffb850;
+        opacity: 1;
+    }
+    .eventsTitle{
+        font-size: 7vw;
+        color: white;
+    }
+    #eventList p{
+      font-size: 3.5vw;
     }
 }
