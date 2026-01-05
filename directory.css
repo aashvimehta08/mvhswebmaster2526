@@ -126,15 +126,15 @@ html, body{
       background-image: url('long-bg.png');
     }
     #topSection{
-      height: 15vw;
+      height: 18vw;
     }
     #directoryText{
-        font-size: 3vw;
-        letter-spacing: 3vw;
+        font-size: 4vw;
+        letter-spacing: 4vw;
         margin-top: 6vw;
     }
     #topLogo{
-        height: 7vw;
+        height: 8vw;
     }
     .eventsGrid {
         grid-template-columns: repeat(1, 1fr);
