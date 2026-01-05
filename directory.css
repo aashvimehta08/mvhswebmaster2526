@@ -17,11 +17,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-@media (max-width: 768px) {
-    body {
-      background-image: url('long-bg.png');
-    }
-}
 html, body{
     margin: 0;
     padding:0;
@@ -97,6 +92,9 @@ html, body{
     line-height: 1.4vw;
   }
 @media (max-width: 768px) {
+    body {
+      background-image: url('long-bg.png');
+    }
     .eventsGrid {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(6, auto);
