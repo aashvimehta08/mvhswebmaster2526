@@ -208,20 +208,21 @@ body, html{
         background-image: url("long-bg.png");
     }
     #topSection{
-        height: 15vw;
+        height: 18vw;
     }
     #calendarText{
-        font-size: 3vw;
-        letter-spacing: 3vw;
+        font-size: 4vw;
+        letter-spacing: 4vw;
         margin-top: 6vw;
     }
     #topLogo{
-        height: 7vw;
+        height: 8vw;
     }
     .calendar{
         max-width: 90vw;
         height: auto;
         border-width: 0.5vw;
+        margin-top: 20vw;
     }
     .dayText{
         font-size: 3vw;
@@ -252,6 +253,6 @@ body, html{
       font-size: 3.5vw;
     }
     #eventSection{
-        margin-bottom:49vw;
+        margin-bottom: 33vw;
     }
 }

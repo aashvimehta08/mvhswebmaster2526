@@ -127,19 +127,19 @@ a:hover{
     background-image: url('long-bg.png');
   }
   #topSection{
-      height: 15vw;
+      height: 18vw;
   }
   #sourcesText{
-      font-size: 3vw;
-      letter-spacing: 3vw;
+      font-size: 4vw;
+      letter-spacing: 4vw;
       margin-top: 6vw;
   }
   #topLogo{
-    height: 7vw;
+    height: 8vw;
 }
 #mainContent{
   margin-top: 25vw;
-  margin-bottom: 28.5vw;
+  margin-bottom: 26vw;
   height: 90vw;
   width: 90vw;
 }
