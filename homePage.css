@@ -347,7 +347,7 @@ p{
 }
 @media (max-width: 768px) {
     body{
-        background-color: #002951;
+        background-image: url('longerBG.png');
     }
     #topSection{
         height: 15vw;
@@ -390,6 +390,12 @@ p{
     }
     #joinText{
         font-size: 2vw;
+    }
+    #joinSection{
+        height: 50vw;
+    }
+    #learnMoreButton{
+        margin: 0 auto;
     }
 }
 
