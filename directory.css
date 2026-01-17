@@ -123,7 +123,8 @@ html, body{
 }
 @media (max-width: 768px) {
     body {
-      background-image: url('long-bg.png');
+      background-image: url("superduperlong bg.png");
+      background-color: #011022;
     }
     #topSection{
       height: 18vw;
@@ -189,6 +190,9 @@ html, body{
       border: none;
       background-color: white;
       opacity: 0.8;
+    }
+    #footerSection{
+      margin-top: 600vw;
     }
 }
 
