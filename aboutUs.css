@@ -290,6 +290,9 @@ html{
     position: relative;
 }
 @media (max-width: 768px){
+    body {
+        background-image: url('superduperlong\ bg.png');
+    }
     #topSection{
         height: 18vw;
     }
@@ -360,8 +363,8 @@ html{
         margin: 0;
     }
     #stillHaveQuestionsSection{
-        margin-top: 15vw;
-        margin-bottom: 36vw;
+        margin-top: 28vw;
+        margin-bottom: 6vw;
     }
 
 }
