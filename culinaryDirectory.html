@@ -4,6 +4,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="directory.css">
+  <script src="chat.js"></script>
+  <script src="dropdown.js" defer></script>
 </head>
 <body>
   <nav>
@@ -51,13 +53,44 @@
       </div>
     </div>
   </nav>
+    <div id="chatbot">
+    <img id="chatIcon" src="comment.png" onclick="openChat()">
+    <div id="chatWindow">
+      <img id="closeIcon" src="cross.png" onclick="closeChat()">
+      <h3 id="chatTitle">Chat with us</h3>
+      <p id="chatText">How can we help you?</p>
+      <div id="chatMessages"></div>
+      <div id="chatInputSection">
+        <input type="text" placeholder="Ask anything!" id="chatInput">
+        <button id="submitButton" type="submit"><img id="submitImg" src="paper-plane.png" alt="Send"></button>
+      </div>
+    </div>
+  </div>
     <div id="topSection">
         <img id="topLogo" src="logo.png" alt="logo">
         <h1 id="directoryText">DIRECTORY</h1>
     </div>
 
+    <div id="filter">
+      <select id="filterDropdown">
+        <option value="../searchDirectory.html">Search</option>
+        <option value="../sportsDirectory.html">Sports</option>
+        <option value="../fitnessDirectory.html">Fitness</option>
+        <option value="../culinaryDirectory.html" selected>Culinary</option>
+        <option value="../kidsDirectory.html">Kids</option>
+        <option value="../seasonalDirectory.html">Seasonal</option>
+        <option value="../wellnessDirectory.html">Wellness</option>
+        <option value="../communityDirectory.html">Community</option>
+        <option value="../socialDirectory.html">Social</option>
+        <option value="../outdoorDirectory.html">Outdoor</option>
+      </select>
+    </div>
+
     <div id="mainContent">
     <div id="selectionSection">
+        <div id="search" class="options">
+        <a href="searchDirectory.html" class="selectionButton">SEARCH</a>
+        </div>
         <div id="sports" class="options">
         <a href="sportsDirectory.html" class="selectionButton">SPORTS</a>
         </div>
@@ -88,14 +121,14 @@
     </div>
     <div id="eventsGrid" class="eventsGrid">
 
-        <div id="event1" class="event" >
+        <div id="event1" class="event" data-category="culinary">
         <div id="event1Content" class="eventContent">
           <h1 id="event1Title" class="eventTitle">KITCHEN</h1>
           <img id="event1ImgSection" class="eventImg" src="kitchen.png">
           <p id="event1Text" class="eventText">Shared kitchen space available for meal prep, cooking and group gatherings. Equipped with tools and appliances to accommodate various culinary activities.</p>
         </div>
         </div>
-        <div id="event2" class="event">
+        <div id="event2" class="event" data-category="culinary">
         <div id="event2Content" class="eventContent">
           <h1 id="event2Title" class="eventTitle">COOKING WORKSHOPS</h1>
           <img id="event2ImgSection" class="eventImg" src="cookingClass.png">
@@ -103,7 +136,7 @@
         </div>
         </div>
 
-        <div id="event3" class="event">
+        <div id="event3" class="event" data-category="culinary">
           <div id="event3Content" class="eventContent">
             <h1 id="event3Title" class="eventTitle">CHEF'S EVENTS</h1>
             <img id="event3ImgSection" class="eventImg" src="chefEvent.png">
@@ -111,7 +144,7 @@
           </div> 
         </div>
 
-        <div id="event4" class="event">
+        <div id="event4" class="event" data-category="culinary">
           <div id="event4Content" class="eventContent">
             <h1 id="event4Title" class="eventTitle">FARM-FRESH STANDS</h1>
             <img id="event4ImgSection" class="eventImg" src="farmFresh.png">
@@ -119,7 +152,7 @@
           </div>
         </div>
 
-        <div id="event5" class="event">
+        <div id="event5" class="event" data-category="culinary">
           <div id="event5Content" class="eventContent">
             <h1 id="event5Title" class="eventTitle">COFFEE BAR</h1>
             <img id="event5ImgSection" class="eventImg" src="coffeeBar.png">
@@ -127,7 +160,7 @@
           </div>
         </div>
 
-        <div id="event6" class="event">
+        <div id="event6" class="event" data-category="culinary">
           <div id="event6Content" class="eventContent">
             <h1 id="event6Title" class="eventTitle">BAKING</h1>
             <img id="event6ImgSection" class="eventImg" src="baking.png">

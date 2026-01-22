@@ -45,3 +45,12 @@
   document.body.appendChild(chatBtn);
   document.body.appendChild(chatIframe);
 })();
+
+// Functions to open/close chatbot (for other UI triggers)
+function openChat() {
+  document.getElementById("chatbot").classList.add("open");
+}
+
+function closeChat() {
+  document.getElementById("chatbot").classList.remove("open");
+}

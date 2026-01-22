@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="search.css">
+  <script src="chat.js"></script>
+  <script src="search.js"></script>
+  <script src="dropdown.js" defer></script>
+</head>
+<body>
+  <nav>
+    <div id="navBar">
+      <div id="home" class="icon">
+        <a href="homePage.html"><img id="homeIcon" class="iconImg" src="home.png">
+        <div class="line"></div>
+        <p id="homeLabel" class="label">Home</p></a>
+      </div>
+      <div id="directory" class="icon">
+        <a href="sportsDirectory.html"><img id="directoryIcon" class="iconImg" src="directory.png">
+        <div class="line"></div>
+        <p id="directoryLabel" class="label">Directory</p></a>
+      </div>
+      <div id="about" class="icon">
+        <a href="aboutus.html"><img id="aboutIcon" class="iconImg" src="about.png">
+        <div class="line"></div>
+        <p id="aboutLabel" class="label">About Us</p></a>
+      </div>
+      <div id="feedback" class="icon">
+        <a href="feedback.html"><img id="feedbackIcon" class="iconImg" src="feedback.png">
+        <div class="line"></div>
+        <p id="feedbackLabel" class="label">Feedback</p></a>
+      </div>
+      <div id="calendar" class="icon">
+        <a href="calendar.html"><img id="calendarIcon" class="iconImg" src="calendar.png">
+        <div class="line"></div>
+        <p id="calendarLabel" class="label">Calendar</p></a>
+      </div>
+      <div id="sources" class="icon">
+        <a href="sources.html"><img id="sourcesIcon" class="iconImg" src="sources.png">
+        <div class="line"></div>
+        <p id="sourcesLabel" class="label">Reference Page</p></a>
+      </div>
+    </div>
+  </nav>
+    <div id="chatbot">
+    <img id="chatIcon" src="comment.png" onclick="openChat()">
+    <div id="chatWindow">
+      <img id="closeIcon" src="cross.png" onclick="closeChat()">
+      <h3 id="chatTitle">Chat with us</h3>
+      <p id="chatText">How can we help you?</p>
+      <div id="chatMessages"></div>
+      <div id="chatInputSection">
+        <input type="text" placeholder="Ask anything!" id="chatInput">
+        <button id="submitButton" type="submit"><img id="submitImg" src="paper-plane.png" alt="Send"></button>
+      </div>
+    </div>
+  </div>
+    <div id="topSection">
+      <img id="topLogo" src="logo.png" alt="logo">
+      <h1 id="directoryText">DIRECTORY</h1>
+    </div>
+
+    <div id="filter">
+      <select id="filterDropdown">
+        <option value="../searchDirectory.html" selected>Search</option>
+        <option value="../sportsDirectory.html">Sports</option>
+        <option value="../fitnessDirectory.html">Fitness</option>
+        <option value="../culinaryDirectory.html">Culinary</option>
+        <option value="../kidsDirectory.html">Kids</option>
+        <option value="../seasonalDirectory.html">Seasonal</option>
+        <option value="../wellnessDirectory.html">Wellness</option>
+        <option value="../communityDirectory.html">Community</option>
+        <option value="../socialDirectory.html">Social</option>
+        <option value="../outdoorDirectory.html">Outdoor</option>
+      </select>
+    </div>
+
+    <div id="mainContent">
+    <div id="selectionSection">
+        <div id="search" class="options">
+        <a href="searchDirectory.html" class="selectionButton">SEARCH</a>
+        </div>
+        <div id="sports" class="options">
+        <a href="sportsDirectory.html" class="selectionButton">SPORTS</a>
+        </div>
+        <div id="fitness" class="options">
+        <a href="fitnessDirectory.html"class="selectionButton">FITNESS</a>
+        </div>
+        <div id="cooking" class="options">
+          <a href="culinaryDirectory.html" class="selectionButton">CULINARY</a>
+        </div>
+        <div id="kids" class="options">
+            <a href="kidsDirectory.html" class="selectionButton">KIDS</a>
+        </div>
+        <div id="seasonal" class="options">
+            <a href="seasonalDirectory.html" class="selectionButton">SEASONAL</a>
+        </div>
+        <div id="wellness" class="options">
+            <a href="wellnessDirectory.html" class="selectionButton">WELLNESS</a>
+        </div>
+        <div id="community" class="options">
+            <a href="communityDirectory.html" class="selectionButton">COMMUNITY</a>
+        </div>
+        <div id="social" class="options">
+            <a href="socialDirectory.html" class="selectionButton">SOCIAL</a>
+        </div>
+        <div id="outdoor" class="options">
+          <a href="outdoorDirectory.html"class="selectionButton">OUTDOOR</a>
+      </div>
+    </div>
+    <div id="eventsSection">
+        <input type="text" id="searchInput" placeholder="Search events...">
+    <div id="eventsGrid" class="eventsGrid">
+
+        <div id="event1" class="event" data-category="sports">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">BASKETBALL</h1>
+          <img id="event1ImgSection" class="eventImg" src="basketball.png">
+          <p id="event1Text" class="eventText">Full-size indoor court available for open play, practice and scheduled pickup games. Features quality hoops and seating, ideal for players of all ages and skill levels.</p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="sports">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">TENNIS</h1>
+          <img id="event2ImgSection" class="eventImg" src="tennis.jpg">
+          <p id="event2Text" class="eventText">Outdoor courts ready for recreational matches, practice and casual games. Suitable for singles and doubles play with well-maintained surfaces.</p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="sports">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">SWIMMING</h1>
+            <img id="event3ImgSection" class="eventImg" src="swimming.png">
+            <p id="event3Text" class="eventText">Community pool open for lap swim, casual swimming and seasonal recreation. Offers ample space for adults and children to enjoy water activities.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="sports">
+          <div id="event4Content" class="eventContent">
+            <h1 id="event4Title" class="eventTitle">PICKLEBALL</h1>
+            <img id="event4ImgSection" class="eventImg" src="pickleball.png">
+            <p id="event4Text" class="eventText">Dedicated courts for friendly games and community matches. Equipment is provided and beginner instruction is available for newcomers.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="sports">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">SOCCER</h1>
+            <img id="event5ImgSection" class="eventImg" src="soccer.png">
+            <p id="event5Text" class="eventText">Open field available for informal games, youth practices and weekend scrimmages. Versatile layout accommodates a range of team sizes and skill levels.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="sports">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">GOLF</h1>
+            <img id="event6ImgSection" class="eventImg" src="golf.png">
+            <p id="event6Text" class="eventText">Indoor simulator and outdoor course available for practice or casual rounds. Offers realistic play and challenges for golfers of every ability.</p>
+          </div>
+        </div>
+                <div id="event1" class="event" data-category="fitness">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">WEIGHT ROOM</h1>
+          <img id="event1ImgSection" class="eventImg" src="weightRoom.png">
+          <p id="event1Text" class="eventText">Fully equipped with free weights, machines and resistance equipment for individual workouts. Space allows residents to focus on strength and conditioning.</p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="fitness">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">CARDIO STUDIO</h1>
+          <img id="event2ImgSection" class="eventImg" src="cardioRoom.png">
+          <p id="event2Text" class="eventText">Studio featuring treadmills, bikes and rowing machines. Open for personal workouts or small group sessions with ample space.</p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="fitness">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">YOGA</h1>
+            <img id="event3ImgSection" class="eventImg" src="yoga.png">
+            <p id="event3Text" class="eventText">Guided classes focusing on flexibility, balance and strength. Suitable for beginners and experienced participants, with varying class styles.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="fitness">
+          <div id="event4Content" class="eventContent">
+            <h1 id="event4Title" class="eventTitle">PERSONAL TRAINING</h1>
+            <img id="event4ImgSection" class="eventImg" src="personalTraining.png">
+            <p id="event4Text" class="eventText">One-on-one sessions tailored to individual fitness goals. Programs include customized workouts and expert guidance.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="fitness">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">SPIN ROOM</h1>
+            <img id="event5ImgSection" class="eventImg" src="spinRoom.png">
+            <p id="event5Text" class="eventText">Indoor cycling studio offering energetic rides with music and instruction. Classes are designed to be engaging and accessible to all levels.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="fitness">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">MORNING BOOTCAMP</h1>
+            <img id="event6ImgSection" class="eventImg" src="bootcamp.png">
+            <p id="event6Text" class="eventText">Group workout sessions focused on strength, endurance and overall fitness. High-energy sessions designed to start the day with motivation.</p>
+          </div>
+        </div>
+                <div id="event1" class="event" data-category="culinary">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">KITCHEN</h1>
+          <img id="event1ImgSection" class="eventImg" src="kitchen.png">
+          <p id="event1Text" class="eventText">Shared kitchen space available for meal prep, cooking and group gatherings. Equipped with tools and appliances to accommodate various culinary activities.</p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="culinary">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">COOKING WORKSHOPS</h1>
+          <img id="event2ImgSection" class="eventImg" src="cookingClass.png">
+          <p id="event2Text" class="eventText">Hands-on sessions teaching new recipes, techniques and meal ideas. Open to residents of all ages and skill levels.</p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="culinary">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">CHEF'S EVENTS</h1>
+            <img id="event3ImgSection" class="eventImg" src="chefEvent.png">
+            <p id="event3Text" class="eventText">Curated dining experiences featuring seasonal or specialty menus. Perfect for small group meals, tasting events and social gatherings.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="culinary">
+          <div id="event4Content" class="eventContent">
+            <h1 id="event4Title" class="eventTitle">FARM-FRESH STANDS</h1>
+            <img id="event4ImgSection" class="eventImg" src="farmFresh.png">
+            <p id="event4Text" class="eventText">Seasonal events showcasing local produce and artisanal foods. Residents can browse, sample and purchase fresh, community-grown items.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="culinary">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">COFFEE BAR</h1>
+            <img id="event5ImgSection" class="eventImg" src="coffeeBar.png">
+            <p id="event5Text" class="eventText">Casual space for coffee, tea and light refreshments. Comfortable seating provides a relaxing spot for conversation or quiet work.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="culinary">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">BAKING</h1>
+            <img id="event6ImgSection" class="eventImg" src="baking.png">
+            <p id="event6Text" class="eventText">Interactive baking experiences for residents to create fresh treats. Recipes are simple, approachable and enjoyable for all skill levels.</p>
+          </div>
+        </div>
+                <div id="event1" class="event" data-category="kids">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">PLAYROOM</h1>
+          <img id="event1ImgSection" class="eventImg" src="playroom.png">
+          <p id="event1Text" class="eventText">Supervised space filled with toys, games and creative activities. Encourages imaginative play and social interaction for younger children.</p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="kids">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">HOMEWORK HELP</h1>
+          <img id="event2ImgSection" class="eventImg" src="homework.png">
+          <p id="event2Text" class="eventText">Quiet area with guidance and support for students after school. Tutors are available to assist with assignments and study skills.</p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="kids">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">YOUTH SPORTS</h1>
+            <img id="event3ImgSection" class="eventImg" src="youthSports.png">
+            <p id="event3Text" class="eventText">Organized activities that promote fitness, teamwork and fun. Programs cater to various ages and skill levels, fostering healthy participation.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="kids">
+          <div id="event4Content" class="eventContent">
+            <h1 id="even4Title" class="eventTitle">ART CLASSES</h1>
+            <img id="event4ImgSection" class="eventImg" src="artClasses.png">
+            <p id="event4Text" class="eventText">Hands-on sessions exploring drawing, painting and creative crafts. Supplies are provided, and projects are designed for skill-building and fun.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="kids">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">TEEN LOUNGE</h1>
+            <img id="event5ImgSection" class="eventImg" src="teenLounge.png">
+            <p id="event5Text" class="eventText">Relaxed space for teens to socialize, relax and enjoy recreational activities. Open during evenings and weekends for casual use.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="kids">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">FAMILY ACTIVITIES</h1>
+            <img id="event6ImgSection" class="eventImg" src="family.png">
+            <p id="event6Text" class="eventText">Family-oriented events held on weekends. Activities encourage participation, learning and fun for all ages.</p>
+          </div>
+        </div>
+                <div id="event1" class="event" data-category="seasonal">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">SPRING PARTY</h1>
+          <img id="event1ImgSection" class="eventImg" src="springParty.png">
+          <p id="event1Text" class="eventText">Outdoor event celebrating spring with music, flowers and refreshments. Offers a chance for residents to socialize and enjoy the season.</p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="seasonal">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">SUMMER SOCIAL</h1>
+          <img id="event2ImgSection" class="eventImg" src="summerSocial.png">
+          <p id="event2Text" class="eventText">Casual summer gathering with games, music and refreshments. Designed to bring neighbors together for community fun.</p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="seasonal">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">FALL CRAFT MARKET</h1>
+            <img id="event3ImgSection" class="eventImg" src="fallCraft.png">
+            <p id="event3Text" class="eventText">Seasonal market featuring handmade goods from local vendors. A welcoming space to browse, shop and enjoy community offerings.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="seasonal">
+          <div id="event4Content" class="eventContent">
+            <h1 id="event4Title" class="eventTitle">WINTER FORMAL</h1>
+            <img id="event4ImgSection" class="eventImg" src="winterFormal.png">
+            <p id="event4Text" class="eventText">Dress-up evening with music, refreshments and festive décor. Provides residents with a classic winter gathering experience.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="seasonal">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">HARVEST BALL</h1>
+            <img id="event5ImgSection" class="eventImg" src="harvestBall.png">
+            <p id="event5Text" class="eventText">Autumn dance event with seasonal décor, music and a lively atmosphere. A highlight for residents to celebrate together.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="seasonal">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">HOLIDAY MIXER</h1>
+            <img id="event6ImgSection" class="eventImg" src="holidayMixer.png">
+            <p id="event6Text" class="eventText">Casual gathering with light refreshments and conversation. Offers residents a chance to connect during the holiday season.</p>
+          </div>
+        </div>
+                <div id="event1" class="event" data-category="wellness">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">MEDITATION SPACE</h1>
+          <img id="event1ImgSection" class="eventImg" src="meditation.png">
+          <p id="event1Text" class="eventText">Quiet room designed for reflection, mindfulness and breathing exercises. Suitable for individuals or small groups seeking a peaceful moment.</p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="wellness">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">SAUNA</h1>
+          <img id="event2ImgSection" class="eventImg" src="sauna.png">
+          <p id="event2Text" class="eventText">Warm, calming space for relaxation and recovery. Offers a quiet environment to unwind and refresh.</p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="wellness">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">MASSAGE THERAPY</h1>
+            <img id="event3ImgSection" class="eventImg" src="massage.png">
+            <p id="event3Text" class="eventText">Professional sessions focused on easing tension and supporting wellness. Available by appointment for residents of all levels.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="wellness">
+          <div id="event4Content" class="eventContent">
+            <h1 id="event4Title" class="eventTitle">NUTRITION COACHING</h1>
+            <img id="event4ImgSection" class="eventImg" src="nutrition.png">
+            <p id="event4Text" class="eventText">Personalized guidance to support healthier eating and lifestyle choices. Sessions offer practical tips and tailored advice.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="wellness">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">MENTAL HEALTH</h1>
+            <img id="event5ImgSection" class="eventImg" src="mentalHealth.png">
+            <p id="event5Text" class="eventText">Access to counseling and emotional support services. Provides resources for residents seeking guidance or stress relief.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="wellness">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">RELAXATION LOUNGE</h1>
+            <img id="event6ImgSection" class="eventImg" src="relaxation.png">
+            <p id="event6Text" class="eventText">Comfortable area for reading, unwinding or quiet breaks. Offers a calm environment to recharge during the day.</p>
+          </div>
+        </div>
+                <div id="event1" class="event" data-category="community">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">FOOD PANTRY</h1>
+          <img id="event1ImgSection" class="eventImg" src="foodPantry.png">
+          <p id="event1Text" class="eventText">Provides groceries and essential items for residents in need. Open regularly to support community members.</p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="community">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">JOB SUPPORT</h1>
+          <img id="event2ImgSection" class="eventImg" src="jobSupport.png">
+          <p id="event2Text" class="eventText">Assistance with resumes, applications and career guidance. Programs are designed to help residents prepare for new opportunities.</p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="community">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">VOLUNTEER</h1>
+            <img id="event3ImgSection" class="eventImg" src="volunteer.png">
+            <p id="event3Text" class="eventText">Ways for residents to get involved and give back locally. Open to individuals or small groups.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="community">
+          <div id="event4Content" class="eventContent">
+            <h1 id="event4Title" class="eventTitle">COUNSELING</h1>
+            <img id="event4ImgSection" class="eventImg" src="couseling.png">
+            <p id="event4Text" class="eventText">Professional guidance for individuals and families. Sessions are available to provide support and personal growth.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="community">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">SENIOR OUTREACH</h1>
+            <img id="event5ImgSection" class="eventImg" src="senior.png">
+            <p id="event5Text" class="eventText">Programs connecting older residents with social activities and community resources. Encourages engagement, interaction and support.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="community">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">ENGLISH CLASSES</h1>
+            <img id="event6ImgSection" class="eventImg" src="englishClass.png">
+            <p id="event6Text" class="eventText">Language-learning sessions for residents of all levels. Small classes provide practice and community interaction.</p>
+          </div>
+        </div>
+                <div id="event1" class="event" data-category="social">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">COFFEE MEETUP</h1>
+          <img id="event1ImgSection" class="eventImg" src="coffeeBar.png">
+          <p id="event1Text" class="eventText">Informal gatherings for conversation and connection. A friendly way to meet neighbors and enjoy casual social time.
+          </p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="social">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">YOUNG PROFESSIONALS</h1>
+          <img id="event2ImgSection" class="eventImg" src="youthProfessionals.png">
+          <p id="event2Text" class="eventText">Networking and social events for students and young adults. Combines casual meetups with opportunities to build community connections.</p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="social">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">GAME NIGHTS</h1>
+            <img id="event3ImgSection" class="eventImg" src="gameNight.png">
+            <p id="event3Text" class="eventText">Evenings featuring board games, cards and friendly competition. Open to residents of all ages for fun and socializing.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="social">
+          <div id="event4Content" class="eventContent">
+            <h1 id="event4Title" class="eventTitle">WINE TASTING</h1>
+            <img id="event4ImgSection" class="eventImg" src="wineTasting.png">
+            <p id="event4Text" class="eventText">Casual events sampling a variety of wines. Offers residents a relaxed way to socialize and enjoy new flavors.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="social">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">BRUNCH CLUB</h1>
+            <img id="event5ImgSection" class="eventImg" src="brunchClub.png">
+            <p id="event5Text" class="eventText">Social gatherings over breakfast or brunch. A welcoming way for neighbors to connect and enjoy the weekend.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="social">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">MOVIE NIGHTS</h1>
+            <img id="event6ImgSection" class="eventImg" src="movieNight.png">
+            <p id="event6Text" class="eventText">Community screenings for residents of all ages. Provides a shared entertainment experience in a relaxed setting.</p>
+          </div>
+        </div>
+                <div id="event1" class="event" data-category="outdoor">
+        <div id="event1Content" class="eventContent">
+          <h1 id="event1Title" class="eventTitle">HIKING TRAILS</h1>
+          <img id="event1ImgSection" class="eventImg" src="hikingTrail.png">
+          <p id="event1Text" class="eventText">Local trails for walking, hiking and enjoying nature. Accessible to a wide range of abilities and ages.</p>
+        </div>
+        </div>
+        <div id="event2" class="event" data-category="outdoor">
+        <div id="event2Content" class="eventContent">
+          <h1 id="event2Title" class="eventTitle">BIKE PATHS</h1>
+          <img id="event2ImgSection" class="eventImg" src="bikePath.png">
+          <p id="event2Text" class="eventText">Safe, accessible routes for casual rides or regular cycling. Open to residents looking for outdoor exercise.
+          </p>
+        </div>
+        </div>
+
+        <div id="event3" class="event" data-category="outdoor">
+          <div id="event3Content" class="eventContent">
+            <h1 id="event3Title" class="eventTitle">COMMUNITY GARDEN</h1>
+            <img id="event3ImgSection" class="eventImg" src="communityGarden.png">
+            <p id="event3Text" class="eventText">Shared plots where residents can grow flowers, herbs and vegetables. Encourages outdoor activity and collaboration.</p>
+          </div> 
+        </div>
+
+        <div id="event4" class="event" data-category="outdoor">
+          <div id="event4Content" class="eventContent">
+            <h1 id="event4Title" class="eventTitle">PICNIC SPACE</h1>
+            <img id="event4ImgSection" class="eventImg" src="picnicSpace.png">
+            <p id="event4Text" class="eventText">Open areas for meals, gatherings or quiet relaxation. Ideal for family or community use.</p>
+          </div>
+        </div>
+
+        <div id="event5" class="event" data-category="outdoor">
+          <div id="event5Content" class="eventContent">
+            <h1 id="event5Title" class="eventTitle">KAYAKING TRIP</h1>
+            <img id="event5ImgSection" class="eventImg" src="kayaking.png">
+            <p id="event5Text" class="eventText">Organized outings on nearby lakes or rivers. Suitable for both beginners and experienced paddlers.</p>
+          </div>
+        </div>
+
+        <div id="event6" class="event" data-category="outdoor">
+          <div id="event6Content" class="eventContent">
+            <h1 id="event6Title" class="eventTitle">TRAIL CLEAN-UPS</h1>
+            <img id="event6ImgSection" class="eventImg" src="trailCleanUp.png">
+            <p id="event6Text" class="eventText">Volunteer events focused on maintaining local trails. Offers residents a hands-on way to support the community.</p>
+          </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+    <footer>
+    <div id="footerSection">
+      <div id="contactUsSection">
+        <h2 id="footerTitle" class="footerText">CONTACT US</h2>
+        <p id="phoneNumber" class="footerText footerInfo">720-487-3920</p>
+        <p id="email" class="footerText footerInfo">milehighmovement@gmail.com</p>
+        <p id="address" class="footerText footerInfo">3782 Movement Circle</p>
+      </div>
+      <div id="socialsSection">
+        <div id="faceboockCircle" class="social top">
+          <img id="facebookIcon" class="socialIcon" src="facebook.png">
+        </div>
+        <div id="instagramCircle" class="social left">
+          <img id="instagramIcon" class="socialIcon" src="instagram.png">
+        </div>
+        <div id="twitterCircle" class="social right">
+          <img id="twitterIcon" class="socialIcon" src="twitter-alt.png">
+        </div>
+        <div id="linkedinCircle" class="social bottom">
+          <img id="linkedinIcon" class="socialIcon" src="linkedin.png">
+        </div>
+      </div>
+      <div id="logoSection">
+        <img id="footerLogo" src="logo.png" alt="logo">
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

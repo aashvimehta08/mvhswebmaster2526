@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
 @import url("nav.css");
 @import url("footer.css");
+@import url("chat.css");
 body {
   background-image: url('Short\ bg.png');
   background-attachment: scroll;
@@ -70,7 +71,7 @@ a{
 a:hover{
     text-decoration: underline;
 }
-button{
+.pdfbutton{
     display: block;
     margin: 0.5vw auto;
     padding: 0.7vw 1.5vw;
@@ -87,7 +88,7 @@ button{
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
-button::before {
+.pdfbutton::before {
   content: "";
   position: absolute;
   top: 0;
@@ -100,24 +101,57 @@ button::before {
   z-index: 0;
 }
 
-button:hover::before {
+.pdfbutton:hover::before {
   left: 0; /* Slide in */
 }
 
-button:hover {
+.pdfbutton:hover {
   color: black;          /* Changes text color when white background slides in */
   transform: scale(1.05);
 }
 
-button:active {
+.pdfbutton:active {
   transform: scale(0.95);
 }
 
-button span {
+.pdfbutton span {
   position: relative;
   z-index: 2;
 }
-button:hover span::after {
+.pdfbutton:hover span::after {
   content: " >";
   position: relative;
+}
+@media (max-width: 768px){
+  body{
+    background-image: url('long-bg.png');
+  }
+  #topSection{
+      height: 18vw;
+  }
+  #sourcesText{
+      font-size: 4vw;
+      letter-spacing: 4vw;
+      margin-top: 6vw;
+  }
+  #topLogo{
+    height: 8vw;
+}
+#mainContent{
+  margin-top: 25vw;
+  margin-bottom: 26vw;
+  height: 90vw;
+  width: 90vw;
+}
+.text{
+  font-size: 3.5vw;
+}
+.title{
+  font-size: 5vw;
+}
+.pdfbutton{
+  padding: 1vw 5vw;
+  font-size: 4vw;
+  margin-bottom: 2vw;
+}
 }

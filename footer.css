@@ -48,6 +48,8 @@ p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
 .footerText{
     margin: 0;
     margin-left: 5vw;
+    text-decoration: none;
+    color: black;
 }
 .social{
     height: 5vw;
@@ -90,5 +92,9 @@ p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
 }
 .social:hover{
     background-color: #ffaa4c;
+}
+a[href^="tel"]{
+    text-decoration: none;
+    color: inherit;
 }
 /*footer styling end*/

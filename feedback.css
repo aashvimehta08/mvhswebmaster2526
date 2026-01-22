@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
 @import url('nav.css');
 @import url("footer.css");
+@import url("chat.css");
 p,h1,h3,h2,:placeholder-shown,select,button,input, textarea{
  font-family: "Arya", sans-serif;
  font-weight: 400;
@@ -51,6 +52,7 @@ html{
 }
 .title{
    font-size: 2vw;
+   letter-spacing: 0.3vw;
    text-align: left;
    color:#222958;
 }
@@ -75,6 +77,7 @@ html{
    background-color: rgba(255, 255, 255, 0.8);
    border: solid, 0.2vw #FEB84E;
    transition: all 0.5s ease;
+   padding: 1%;
 }
 
 .feedbackForm:hover {
@@ -174,13 +177,6 @@ html{
    gap: 0.1vw;
    transition: all 0.3s ease;
 } 
-.whatsNext:hover {
-   background-color: rgba(255, 255, 255, 0.9);
-   transform: translateY(-0.4vw);
-   transition: all 0.3s ease;
-   box-shadow: 0 0 1.8vw rgba(0,0,0,0.2);
-   cursor: pointer;
-}
 
 .whatsNextTitle {
    margin: 0;       
@@ -189,4 +185,67 @@ html{
 .whatsNextText {
    margin: 0;       
    font-size: 1.2vw;
+}
+@media (max-width: 768px){
+   body{
+      background-image: url('long-bg.png');
+   }
+   #topSection{
+       height: 18vw;
+   }
+   #feedbackText{
+       font-size: 4vw;
+       letter-spacing: 4vw;
+       margin-top: 6vw;
+   }
+   #topLogo{
+      height: 8vw;
+  }
+  .title{
+   font-size: 3vw;
+  }
+  .feedbackForm{
+   height: 85vw;
+   width: 75vw;
+  }
+  #selectSection{
+   width: 71.5vw;
+   height: 8vw;
+   font-size: 2vw;
+  }
+  .IDinput{
+   width: 70vw;
+   height: 8vw;
+   font-size: 2vw;
+  }
+  .mainFeedbackInput{
+   width: 70vw;
+   height: 30vw;
+   font-size: 2vw;
+  }
+  #submitButton{
+   height: 6vw;
+   width: 5vw;
+   margin-top: 3vw;
+  }
+  .submitButton{
+   height: 6vw;
+   width: 30vw;
+   font-size: 3vw;
+   margin-top: 2vw;
+  }
+  .spacer{
+   width: 80vw
+  }
+  .whatsNext{
+   height: 15vw;
+   width: 50vw;
+   margin-bottom: 6vw;
+  }
+  .whatsNextTitle{
+   font-size: 3.5vw;
+  }
+  .whatsNextText{
+   font-size: 1.75vw;
+  }
 }

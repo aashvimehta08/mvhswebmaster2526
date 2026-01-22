@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="calendar.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <script src="chat.js"></script>
  <title>Calendar</title>
 </head>
 <body>
@@ -42,6 +43,19 @@
       </div>
     </div>
   </nav>
+    <div id="chatbot">
+    <img id="chatIcon" src="comment.png" onclick="openChat()">
+    <div id="chatWindow">
+      <img id="closeIcon" src="cross.png" onclick="closeChat()">
+      <h3 id="chatTitle">Chat with us</h3>
+      <p id="chatText">How can we help you?</p>
+      <div id="chatMessages"></div>
+      <div id="chatInputSection">
+        <input type="text" placeholder="Ask anything!" id="chatInput">
+        <button id="submitButton" type="submit"><img id="submitImg" src="paper-plane.png" alt="Send"></button>
+      </div>
+    </div>
+  </div>
     <div id="topSection">
        <img id="topLogo" src="logo.png" alt="logo">
        <h1 id="calendarText">CALENDAR</h1>
@@ -50,11 +64,11 @@
 <div class="calendar-container">
 <div class="calendar">
     <div class="header">
-        <button id="prevBtn">
+        <button id="prevBtn" class="arrowbtn">
             <i class="fas fa-chevron-left"></i>
         </button>
         <div class="monthYear" id="monthYear"></div>
-        <button id="nextBtn">
+        <button id="nextBtn" class="arrowbtn">
             <i class="fas fa-chevron-right"></i>
         </button>
     </div>

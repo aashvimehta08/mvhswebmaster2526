@@ -2,7 +2,7 @@
 @import url('nav.css');
 @import url("footer.css");
 @import url("chat.css");
-p,h1, a{
+p,h1, a,::placeholder, input, textarea{
   font-family: "Arya", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -41,6 +41,9 @@ html, body{
   margin-top: 4vw;
   font-size: 2.5vw;
 }
+#eventsSection{
+    width: 100%;
+}
 .eventsGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -49,9 +52,7 @@ html, body{
     row-gap: 25vw;
     column-gap: 5vw;
     height: 80vw;
-    margin:auto;
-    margin-right: 3vw;
-    margin-top: 3vw;
+    margin-left: 5vw;
 }
 .eventContent {
   display: flex;
@@ -91,47 +92,19 @@ html, body{
     margin-top: 0.8vw;
     line-height: 1.4vw;
   }
-#filter{
-  display: none;
-}
-#mainContent{
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex: 1 0 auto;
-    gap: 5vw;
-}
-#selectionSection{
-  margin-top: 5vw;
-}
-.options{
-    margin-left: 8vw;
-    margin-bottom: 4vw;
-}
-.selectionButton{
-    background-color: transparent;
-    border: transparent;
-    color: rgb(0, 0, 0);
-    letter-spacing: 0.3vw;
-    font-size: 2vw;
-    text-decoration: none;
-    
-}
-.selectionButton:hover{
-    text-shadow: 0 0 1vw #2B85A7;
+#filter {
+    display: none;
 }
 @media (max-width: 768px) {
     body {
-      background-image: url("superduperlong bg.png");
-      background-color: #011022;
+      background-image: url('long-bg.png');
     }
     #topSection{
-      height: 18vw;
+        height: 20vw;
     }
     #directoryText{
         font-size: 4vw;
-        letter-spacing: 4vw;
+        letter-spacing: 3vw;
         margin-top: 6vw;
     }
     #topLogo{
@@ -191,8 +164,96 @@ html, body{
       background-color: white;
       opacity: 0.8;
     }
-    #footerSection{
-      margin-top: 600vw;
+}
+#mainContent{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 auto;
+    gap: 0vw;
+}
+#selectionSection{
+  margin-top: 5vw;
+}
+.options{
+    margin-left: 8vw;
+    margin-bottom: 4vw;
+}
+.selectionButton{
+    background-color: transparent;
+    border: transparent;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.3vw;
+    font-size: 2vw;
+    text-decoration: none;
+    
+}
+.selectionButton:hover{
+    text-shadow: 0 0 1vw #2B85A7;
+}
+/* -------------------- SEARCH PAGE STYLES -------------------- */
+
+/* Hide all events by default */
+.event {
+    display: none;          /* hide initially */
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Class to show visible events */
+.event.visible {
+    display: flex;          /* match original flex layout */
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Search input field */
+#searchInput {
+    width: 85%;
+    padding: 0.8vw 1vw;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    margin-left: 5vw;
+    display: block;
+    font-size: 1.1vw;
+    font-family: inherit;
+    border-radius: 0.6vw;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+#searchInput:focus {
+    border-color: #04567D;
+    box-shadow: 0 0 0 2px rgba(4, 86, 125, 0.2);
+}
+
+
+/* Smooth hide/show for events */
+.event {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.event.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+/* Mobile adjustments for search input */
+@media (max-width: 768px) {
+    
+    #searchInput {
+        width: 85%;
+        font-size: 4vw;
+        padding: 3vw;
+        border-radius: 3vw;
+        margin: auto;
+        margin-top: 3vw;
+        margin-bottom: 6vw;
     }
 }
+
 

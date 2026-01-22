@@ -4,6 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="feedback.css">
+    <script src="chat.js"></script>
    <title>FeedbackPage</title>
 </head>
 
@@ -54,6 +55,19 @@
       </div>
     </div>
   </nav>
+    <div id="chatbot">
+    <img id="chatIcon" src="comment.png" onclick="openChat()">
+    <div id="chatWindow">
+      <img id="closeIcon" src="cross.png" onclick="closeChat()">
+      <h3 id="chatTitle">Chat with us</h3>
+      <p id="chatText">How can we help you?</p>
+      <div id="chatMessages"></div>
+      <div id="chatInputSection">
+        <input type="text" placeholder="Ask anything!" id="chatInput">
+        <button id="submitButton" type="submit"><img id="submitImg" src="paper-plane.png" alt="Send"></button>
+      </div>
+    </div>
+  </div>
    <div id="topSection">
        <img id="topLogo" src="logo.png" alt="logo">
        <h1 id="feedbackText">FEEDBACK</h1>
@@ -62,8 +76,8 @@
 
    <div id="formBox" class="formBox">
        <div id="formBoxtitle" class="title">
-           <h2>How can we improve your experience?</h2>
-           <p>Let us know below!</p>
+           <h2>HOW CAN WE IMPROVE YOUR EXPERIENCE?</h2>
+           <p>LET US KNOW BELOW!</p>
        </div>
 
 
@@ -96,7 +110,7 @@
            </div>
 
 
-           <div id="submitButton">
+           <div id="submitSection">
                <button class="submitButton" type="submit">Submit</button>
            </div>
        </form>

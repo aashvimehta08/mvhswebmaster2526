@@ -79,3 +79,22 @@ nav{
     word-spacing: 0px;
 }
 /*nav bar styling bottom*/
+@media (max-width: 768px) {
+    .icon{
+        margin-top: -0.3vw;
+    }
+    .label{
+        margin-top: 1vw;
+    }
+    #navBar{
+        height: 6vw;
+    }
+    .iconImg{
+        width: 2vw;
+        height: 2vw;
+    }
+    .line{
+        width: 2vw;
+        height: 0.4vw;
+    }
+}

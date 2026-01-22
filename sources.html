@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device width, initial-scale=1.0" /> 
 <title>Sources</title> 
 <link rel="stylesheet" href="sources.css" />  
+<script src="chat.js"></script>
 </head> 
 <body>
     <nav>
@@ -52,6 +53,19 @@
       </div>
     </div>
   </nav>
+    <div id="chatbot">
+    <img id="chatIcon" src="comment.png" onclick="openChat()">
+    <div id="chatWindow">
+      <img id="closeIcon" src="cross.png" onclick="closeChat()">
+      <h3 id="chatTitle">Chat with us</h3>
+      <p id="chatText">How can we help you?</p>
+      <div id="chatMessages"></div>
+      <div id="chatInputSection">
+        <input type="text" placeholder="Ask anything!" id="chatInput">
+        <button id="submitButton" type="submit"><img id="submitImg" src="paper-plane.png" alt="Send"></button>
+      </div>
+    </div>
+  </div>
     <div id="topSection">
         <img id="topLogo" src="logo.png" alt="logo">
         <h1 id="sourcesText">REFERENCE PAGE</h1>
@@ -71,10 +85,10 @@
             <p class="text"><a href="https://html.com/">HTML.com</a></p>
             <p class="text"><a href="https://hrcaonline.org/">HRCA Website</a></p>
         </div>
-        <button type="button" id="workLogButton" onclick="window.location.href='webmasterWorkLog25-26.pdf'">
+        <button class="pdfbutton" type="button" id="workLogButton" onclick="window.location.href='webmaster work log 25-26 .pdf'">
             <span>WORK LOG</span>
         </button>
-        <button type="button" id="copyrightButton" onclick="window.location.href='copyrightChecklistWebmaster2526.pdf'">
+        <button class="pdfbutton" type="button" id="copyrightButton" onclick="window.location.href='copyrightChecklistWebmaster2526.pdf'">
             <span>COPYRIGHT CHECKLIST</span>
         </button>
     </div>
