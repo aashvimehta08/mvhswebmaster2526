@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mile High Movement - Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .chatbot-container {
+            width: 100%;
+            max-width: 600px;
+            height: 90vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: flex; 
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .chatbot-header h1 {
+            font-size: 24px;
+            margin-bottom: 3px;
+        }
+
+        .chatbot-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .chatbot-messages {
+            flex: 3;
+            overflow-y: auto;
+            padding: 28px 24px 28px 24px;
+            background: #f5f7fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            max-width: 75%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.bot .message-content a {
+            color: #3b5bdb;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .message.bot .message-content a:hover {
+            color: #2f4ab8;
+        }
+
+        .chatbot-input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .chatbot-input:focus {
+            border-color: #667eea;
+        }
+
+        .chatbot-send {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .chatbot-send:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .chatbot-send:active {
+            transform: translateY(0);
+        }
+
+        .chatbot-send:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+            width: fit-content;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #999;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .welcome-message {
+            text-align: center;
+            color: #666;
+            padding: 40px 20px;
+        }
+
+        .welcome-message h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .welcome-message p {
+            margin-bottom: 5px;
+        }
+
+        /* Scrollbar styling */
+        .chatbot-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chatbot-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chatbot-messages::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+
+        .chatbot-messages::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <a href="homePage.html" class="back-link" id="back-link">← Back to Home</a>
+    
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h1>❀ Mile High Movement Chatbot ❀</h1>
+            <p>Ask me anything about our community center!</p>
+        </div>
+        
+        <div class="chatbot-messages" id="messages" role="log" aria-live="polite" aria-relevant="additions">
+            <div class="welcome-message">
+                <h2>Welcome!</h2>
+                <p>I'm here to help you learn about Mile High Movement.</p>
+                <p>You can ask me about:</p>
+                <p>• Programs and services</p>
+                <p>• Events and activities</p>
+                <p>• Contact information</p>
+                <p>• And much more!</p>
+            </div>
+        </div>
+        
+        <div class="chatbot-input-container">
+            <input 
+                type="text" 
+                id="userInput" 
+                class="chatbot-input" 
+                placeholder="Type your question here..."
+                autocomplete="off"
+                aria-label="Type your message"
+            >
+            <button id="sendButton" class="chatbot-send" aria-label="Send message">Send</button>
+        </div>
+    </div>
+
+    <script>
+                // Hide back-link if inside an iframe (popup mode)
+                if (window.self !== window.top) {
+                    const backLink = document.getElementById('back-link');
+                    if (backLink) backLink.style.display = 'none';
+                }
+        // API URL: use a hosted backend when deployed, fallback to localhost for dev.
+        // You can override by defining window.MHM_CHATBOT_API_URL before this script runs.
+        const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const isFileProtocol = window.location.protocol === 'file:';
+        const API_URL = window.MHM_CHATBOT_API_URL
+            || (isLocalHost || isFileProtocol
+                ? 'http://localhost:5001/api/chat'
+                : `${window.location.origin}/api/chat`);
+        const messagesContainer = document.getElementById('messages');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+        const REQUEST_TIMEOUT_MS = 15000;
+
+        // Remove welcome message when user starts chatting
+        let welcomeRemoved = false;
+        let isSending = false;
+
+        function removeWelcomeMessage() {
+            if (!welcomeRemoved) {
+                const welcomeMsg = messagesContainer.querySelector('.welcome-message');
+                if (welcomeMsg) {
+                    welcomeMsg.remove();
+                    welcomeRemoved = true;
+                }
+            }
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function linkifyText(text) {
+            const escaped = escapeHtml(text);
+            const withBreaks = escaped.replace(/\n/g, '<br>');
+            const urlRegex = /\bhttps?:\/\/[^\s<]+/g;
+            return withBreaks.replace(urlRegex, (url) => {
+                const cleanUrl = url.replace(/&amp;/g, '&');
+                return `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+            });
+        }
+
+        function addMessage(text, isUser) {
+            removeWelcomeMessage();
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            if (isUser) {
+                contentDiv.textContent = text;
+            } else {
+                contentDiv.innerHTML = linkifyText(String(text || ''));
+            }
+            
+            messageDiv.appendChild(contentDiv);
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            removeWelcomeMessage();
+            
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            `;
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typing-indicator');
+            if (indicator) {
+                indicator.remove();
+            }
+        }
+
+        function updateSendState() {
+            sendButton.disabled = isSending || userInput.value.trim().length === 0;
+        }
+
+        async function sendMessage() {
+            const message = userInput.value.trim();
+            if (!message || isSending) return;
+
+            // Disable input while processing
+            isSending = true;
+            userInput.disabled = true;
+            updateSendState();
+
+            // Add user message
+            addMessage(message, true);
+            userInput.value = '';
+            updateSendState();
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message }),
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    throw new Error(`Server responded with status ${response.status}`);
+                }
+
+                let data;
+                try {
+                    data = await response.json();
+                } catch (parseError) {
+                    throw new Error('Unable to read server response.');
+                }
+                
+                hideTypingIndicator();
+                
+                if (data && data.status === 'success' && data.response) {
+                    addMessage(data.response, false);
+                } else {
+                    addMessage('I apologize, but I encountered an error. Please try again.', false);
+                }
+            } catch (error) {
+                hideTypingIndicator();
+                const errorMessage = error.name === 'AbortError'
+                    ? 'Sorry, the request timed out. Please try again.'
+                    : 'Sorry, I cannot connect to the server. Please make sure the backend is running.';
+                addMessage(errorMessage, false);
+                console.error('Error:', error);
+            }
+
+            // Re-enable input
+            isSending = false;
+            userInput.disabled = false;
+            updateSendState();
+            userInput.focus();
+        }
+
+        // Event listeners
+        sendButton.addEventListener('click', sendMessage);
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        userInput.addEventListener('input', updateSendState);
+
+        // Focus input on load
+        userInput.focus();
+        updateSendState();
+    </script>
+</body>
+</html>

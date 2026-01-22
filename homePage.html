@@ -7,6 +7,32 @@
 </head>
 <body>
   <nav>
+  <!-- Chatbox Blob and Popup Chat Window -->
+  <div id="chatbox-blob" style="position: fixed; bottom: 32px; right: 32px; z-index: 9999;">
+    <button id="open-chatbot" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50%; width: 64px; height: 64px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); font-size: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+      💬
+    </button>
+  </div>
+  <div id="chatbot-popup" style="display:none; position: fixed; top: 32px; right: 32px; width: 400px; max-width: 98vw; height: calc(100vh - 64px); max-height: 900px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 28px; box-shadow: 0 8px 32px rgba(0,0,0,0.25); z-index: 10000; display: flex; flex-direction: column; overflow: hidden;">
+    <div style="background: transparent; color: white; padding: 24px 24px 12px 24px; display: flex; align-items: center; justify-content: space-between; border-top-left-radius: 28px; border-top-right-radius: 28px;">
+      <span style="font-weight: bold; font-size: 26px; letter-spacing: 1px;">❀ Mile High Movement</span>
+      <button id="close-chatbot" style="background: none; border: none; color: white; font-size: 32px; cursor: pointer;">&times;</button>
+    </div>
+    <iframe src="chatbot.html" style="border: none; width: 100%; flex: 1 1 auto; height: 100%; background: #fff; border-bottom-left-radius: 28px; border-bottom-right-radius: 28px;"></iframe>
+  </div>
+  <script>
+    const openBtn = document.getElementById('open-chatbot');
+    const popup = document.getElementById('chatbot-popup');
+    const closeBtn = document.getElementById('close-chatbot');
+    openBtn.onclick = function() {
+      popup.style.display = 'flex';
+      openBtn.style.display = 'none';
+    };
+    closeBtn.onclick = function() {
+      popup.style.display = 'none';
+      openBtn.style.display = 'flex';
+    };
+  </script>
     <div id="navBar">
       <div id="home" class="icon">
         <a href="homePage.html"><img id="homeIcon" class="iconImg" src="home.png">
