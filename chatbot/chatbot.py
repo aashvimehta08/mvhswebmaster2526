@@ -32,12 +32,13 @@ class CustomChatbot:
         self.directories = {}
         self.activities = []
         self.mission_text = ""
+        self.origin_text = ""
         self.history = []  # Conversation history
         self._load_and_index_content()
     
     def _load_calendar_events(self):
         """Load events from calendar.js"""
-        calendar_path = os.path.join(self.website_directory, '..', 'calendar.js')
+        calendar_path = os.path.join(self.website_directory, 'calendar.js')
         if os.path.exists(calendar_path):
             try:
                 with open(calendar_path, 'r', encoding='utf-8') as f:
@@ -107,6 +108,36 @@ class CustomChatbot:
                         })
             except Exception as e:
                 print(f"Error loading mission statement: {e}")
+
+    def _load_origin(self):
+        """Load origin story from aboutus.html"""
+        aboutus_path = os.path.join(self.website_directory, 'aboutus.html')
+        if os.path.exists(aboutus_path):
+            try:
+                with open(aboutus_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+
+                origin_text = ""
+                # Prefer the specific paragraph by id if present
+                id_match = re.search(r'<p[^>]*id="whereFromText"[^>]*>(.*?)</p>', content, re.IGNORECASE | re.DOTALL)
+                if id_match:
+                    origin_text = re.sub(r'<[^>]+>', '', id_match.group(1)).strip()
+                else:
+                    origin_pattern = r'<h1[^>]*>\s*WHERE DID WE BEGIN\\?\\s*</h1>\\s*<p[^>]*>(.*?)</p>'
+                    origin_match = re.search(origin_pattern, content, re.IGNORECASE | re.DOTALL)
+                    if origin_match:
+                        origin_text = re.sub(r'<[^>]+>', '', origin_match.group(1)).strip()
+
+                if origin_text:
+                    self.origin_text = origin_text
+                    self.documents.append(f"Origin: {origin_text}")
+                    self.document_metadata.append({
+                        'filename': 'aboutus.html',
+                        'type': 'origin',
+                        'content': origin_text
+                    })
+            except Exception as e:
+                print(f"Error loading origin story: {e}")
 
     def _load_activities(self):
         """Load activities from directory pages"""
@@ -208,6 +239,7 @@ class CustomChatbot:
         self._load_calendar_events()
         self._load_faqs()
         self._load_mission()
+        self._load_origin()
         self._load_activities()
         
         print(f"Indexed {len(self.documents)} content segments")
@@ -244,6 +276,61 @@ class CustomChatbot:
                     matching_events.append(f"{date}: {event}")
         
         return matching_events[:5]  # Return top 5 matching events
+
+    def _parse_date_from_query(self, query):
+        """Parse a date from the query and return YYYY-MM-DD if possible."""
+        query_lower = query.lower()
+        month_map = {
+            'january': 1, 'jan': 1,
+            'february': 2, 'feb': 2,
+            'march': 3, 'mar': 3,
+            'april': 4, 'apr': 4,
+            'may': 5,
+            'june': 6, 'jun': 6,
+            'july': 7, 'jul': 7,
+            'august': 8, 'aug': 8,
+            'september': 9, 'sep': 9, 'sept': 9,
+            'october': 10, 'oct': 10,
+            'november': 11, 'nov': 11,
+            'december': 12, 'dec': 12,
+        }
+
+        # Match numeric formats like 1/26/2026 or 01-26-2026
+        numeric_match = re.search(r'\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})\b', query_lower)
+        if numeric_match:
+            month, day, year = numeric_match.groups()
+            year = int(year)
+            if year < 100:
+                year += 2000
+            try:
+                return f"{year:04d}-{int(month):02d}-{int(day):02d}"
+            except ValueError:
+                return None
+
+        # Match formats like "January 26 2026" or "Jan 26, 2026"
+        word_match = re.search(r'\b([a-z]+)\s+(\d{1,2})(?:,)?\s+(\d{4})\b', query_lower)
+        if word_match:
+            month_word, day, year = word_match.groups()
+            month = month_map.get(month_word)
+            if month:
+                try:
+                    return f"{int(year):04d}-{month:02d}-{int(day):02d}"
+                except ValueError:
+                    return None
+
+        # Match "January 26" (assume current year)
+        word_match_no_year = re.search(r'\b([a-z]+)\s+(\d{1,2})\b', query_lower)
+        if word_match_no_year:
+            month_word, day = word_match_no_year.groups()
+            month = month_map.get(month_word)
+            if month:
+                year = datetime.now().year
+                try:
+                    return f"{year:04d}-{month:02d}-{int(day):02d}"
+                except ValueError:
+                    return None
+
+        return None
     
     def _find_faq_match(self, query):
         """Find matching FAQ for query"""
@@ -330,13 +417,27 @@ class CustomChatbot:
         if any(word in query_lower for word in ['contact', 'phone', 'email', 'address', 'location', 'locate', 'where', 'reach', 'call']):
             return [{'content': self._extract_contact_info(query), 'filename': 'contact', 'type': 'contact'}]
 
+        # Direct date lookup for calendar events
+        date_key = self._parse_date_from_query(query)
+        if date_key:
+            events_on_date = self.events.get(date_key, [])
+            if events_on_date:
+                content = "EVENTS_ON_DATE:" + date_key + "||" + "||".join(events_on_date)
+            else:
+                content = "EVENTS_ON_DATE:" + date_key + "||NONE"
+            return [{'content': content, 'filename': 'calendar.js', 'type': 'event'}]
+
         # Direct mission lookup to avoid noisy retrieval
         if 'mission' in query_lower:
             if self.mission_text:
                 return [{'content': self.mission_text, 'filename': 'aboutus.html', 'type': 'mission'}]
 
+        if any(phrase in query_lower for phrase in ['how did you begin', 'where did we begin', 'how did we begin', 'origin story', 'how it started']):
+            if self.origin_text:
+                return [{'content': self.origin_text, 'filename': 'aboutus.html', 'type': 'origin'}]
+
         # Activity queries
-        if any(word in query_lower for word in ['activity', 'activities', 'things to do', 'classes', 'programs', 'what do you offer']):
+        if any(word in query_lower for word in ['activity', 'activities', 'things to do', 'classes', 'programs', 'what do you offer', 'offer', 'offered', 'available', 'have']):
             if self.activities:
                 activity_search = self._search_activities(query)
                 if activity_search['type'] == 'general':

@@ -25,6 +25,7 @@
   height: 30vw;
   border-radius: 1.5vw;
   padding: 1.5vw;
+  box-sizing: border-box;
 }
 
 /* Icon */
@@ -44,12 +45,14 @@
   display: none;
   background-color: white;
   transition: opacity 0.3s ease;
-  width: 25vw;
-  height: 30vw;
+  width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
   transition: all 0.3s ease;
   border-radius: 1.5vw;
+  box-sizing: border-box;
+  position: relative;
 }
 #closeIcon{
     width: 2vw;
@@ -66,41 +69,74 @@
     padding:0;
 }
 #chatMessages{
-    width: 100%;
-    height: 20vw;
-    border: 0.2vw solid #CCCCCC;
-    border-radius: 1vw;
-    margin-top: 0.6vw;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100%;
+  height: calc(100% - 9vw);
+  border: 0.2vw solid #CCCCCC;
+  border-radius: 1vw;
+  margin-top: 0.6vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.8vw;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vw;
+  background: #f7f7f7;
+  box-sizing: border-box;
 }
 #chatInputSection{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.6vw;
+  width: 100%;
 }
 #chatInput{
-    width: 80%;
-    height: 3vw;
-    border-radius: 1vw;
-    border: 0.2vw solid #CCCCCC;
-    padding: 0.5vw;
-    font-size: 1.2vw;
+  width: calc(100% - 4.5vw);
+  height: 3vw;
+  border-radius: 1vw;
+  border: 0.2vw solid #CCCCCC;
+  padding: 0.5vw;
+  font-size: 1.2vw;
+  box-sizing: border-box;
 }
 #submitButton{
-    height: 3vw;
-    width: 3vw;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background-color: #04567D;
+  height: 3vw;
+  width: 3vw;
+  min-width: 3vw;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #04567D;
 }
 #submitImg{
     height: 70%;
     width: 70%;
+}
+.chat-message {
+  max-width: 85%;
+  padding: 0.6vw 0.8vw;
+  border-radius: 1vw;
+  font-size: 1vw;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+.chat-message.user {
+  align-self: flex-end;
+  background: #5a5a5a;
+  color: white;
+}
+.chat-message.bot {
+  align-self: flex-start;
+  background: white;
+  color: #222;
+  border: 0.1vw solid #e0e0e0;
+}
+.chat-message.typing {
+  font-style: italic;
+  color: #555;
 }
 /* Show content when open */
 #chatbot.open #chatWindow {
