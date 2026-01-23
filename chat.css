@@ -111,6 +111,9 @@
   border: none;
   background-color: #04567D;
 }
+#submitButton:hover{
+    background-color: #034a66;
+}
 #submitImg{
     height: 70%;
     width: 70%;
