@@ -231,6 +231,9 @@ class ResponseGenerator:
         if any(word in query_lower for word in ['mission']):
             return 'mission'
 
+        if any(phrase in query_lower for phrase in ['how did you begin', 'where did we begin', 'how did we begin', 'origin story', 'how it started']):
+            return 'origin'
+
         if any(word in query_lower for word in ['today', 'tomorrow', 'next', 'this week', 'this weekend', 'next week']):
             return 'date_specific'
 
@@ -400,6 +403,11 @@ class ResponseGenerator:
         """Generate a response based on query and retrieved content"""
         intent = self.detect_intent(query)
 
+        if isinstance(retrieved_content, str) and retrieved_content.startswith("EVENTS_ON_DATE:"):
+            event_response = self.format_event_date_response(retrieved_content)
+            if event_response:
+                return event_response
+
         if isinstance(retrieved_content, str) and retrieved_content.startswith("ACTIVITY_"):
             activity_response = self.format_activity_response(retrieved_content)
             if activity_response:
@@ -437,9 +445,9 @@ class ResponseGenerator:
             return random.choice(self.response_templates['date_specific'])
 
         # FAQ-style intents with scannable responses
-        if intent in {'hours', 'pricing', 'location', 'volunteer', 'accessibility', 'calendar', 'kids', 'wellness', 'outdoor', 'culinary', 'sports', 'fitness_classes', 'events', 'mission'}:
+        if intent in {'hours', 'pricing', 'location', 'volunteer', 'accessibility', 'calendar', 'kids', 'wellness', 'outdoor', 'culinary', 'sports', 'fitness_classes', 'events', 'mission', 'origin'}:
             if retrieved_content:
-                if intent == 'mission':
+                if intent in {'mission', 'origin'}:
                     content_text = self.normalize_content(retrieved_content)
                 else:
                     content_text = self.extract_key_info(retrieved_content, max_length=240)
@@ -644,3 +652,18 @@ class ResponseGenerator:
             return "Here are the closest matches:" + bullets
 
         return None
+
+    def format_event_date_response(self, content):
+        """Format events for a specific date."""
+        if not content.startswith("EVENTS_ON_DATE:"):
+            return None
+        raw = content.replace("EVENTS_ON_DATE:", "").strip()
+        parts = [p.strip() for p in raw.split("||") if p.strip()]
+        if not parts:
+            return "I do not see events listed for that date."
+        date = parts[0]
+        events = parts[1:]
+        if not events or events == ["NONE"]:
+            return f"I do not see events listed for {date}."
+        bullets = '\n' + '\n'.join([f'- {e}' for e in events])
+        return f"Events on {date}:" + bullets

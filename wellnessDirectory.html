@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="chat.css">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="directory.css">
@@ -10,19 +11,9 @@
 <body>
   <nav>
   <!-- Chatbox Blob Component -->
-  <div id="chatbox-blob" style="position: fixed; bottom: 32px; right: 32px; z-index: 9999;">
-    <button id="open-chatbot" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50%; width: 64px; height: 64px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); font-size: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-      💬
-    </button>
-  </div>
-  <script>
-    document.getElementById('open-chatbot').onclick = function() {
-      window.location.href = 'chatbot.html';
-    };
-  </script>
-    <div id="navBar">
+<div id="navBar">
       <div id="home" class="icon">
-        <a href="homePage.html"><img id="homeIcon" class="iconImg" src="home.png">
+        <a href="index.html"><img id="homeIcon" class="iconImg" src="home.png">
         <div class="line"></div>
         <p id="homeLabel" class="label">Home</p></a>
       </div>
