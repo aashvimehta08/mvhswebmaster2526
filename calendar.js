@@ -612,6 +612,250 @@ const events = {
 "2026-04-30": [
   "10:00 AM: Morning Stretch Session",
   "7:00 PM: Spring Community Dinner"
+],
+"2026-05-01": [
+  "9:00 AM: Basketball Open Play",
+  "6:00 PM: Spring Social Mixer"
+],
+"2026-05-02": [
+  "8:00 AM: Morning Bootcamp",
+  "3:00 PM: Youth Soccer Clinic"
+],
+"2026-05-03": [
+  "10:00 AM: Community Garden Workday",
+  "4:00 PM: Family Movie Night"
+],
+"2026-05-04": [
+  "9:00 AM: Pickleball Open Play",
+  "5:00 PM: Teen Lounge Hangout"
+],
+"2026-05-05": [
+  "7:00 AM: Spin Class",
+  "6:00 PM: Spring Craft Workshop"
+],
+"2026-05-06": [
+  "10:00 AM: Yoga Flow",
+  "6:30 PM: Game Night"
+],
+"2026-05-07": [
+  "3:00 PM: Kids Playroom Time",
+  "7:00 PM: Wine Tasting"
+],
+"2026-05-08": [
+  "9:00 AM: Baking Session",
+  "6:00 PM: Pickleball Ladder Match"
+],
+"2026-05-09": [
+  "10:00 AM: Youth Basketball Game",
+  "2:00 PM: Hiking Trip"
+],
+"2026-05-10": [
+  "9:00 AM: Open Swim",
+  "11:00 AM: Brunch Club Meet-Up"
+],
+"2026-05-11": [
+  "8:00 AM: Weight Room Training Block",
+  "4:00 PM: Homework Help"
+],
+"2026-05-12": [
+  "10:00 AM: Coffee Meetup",
+  "6:00 PM: Young Professionals Social"
+],
+"2026-05-13": [
+  "11:00 AM: Meditation Session",
+  "4:30 PM: Youth Tennis Clinic"
+],
+"2026-05-14": [
+  "9:00 AM: Spin Class",
+  "6:00 PM: Game Night"
+],
+"2026-05-15": [
+  "8:00 AM: Weight Room Orientation",
+  "6:30 PM: Spring Mixer"
+],
+"2026-05-16": [
+  "10:00 AM: Community Garden Planning",
+  "3:00 PM: Pickleball Open Play"
+],
+"2026-05-17": [
+  "9:00 AM: Yoga and Stretch",
+  "4:00 PM: Family Picnic"
+],
+"2026-05-18": [
+  "7:30 AM: Morning Bootcamp",
+  "5:00 PM: Teen Lounge Gathering"
+],
+"2026-05-19": [
+  "9:00 AM: Cardio Studio Circuit",
+  "6:00 PM: Volunteer Night"
+],
+"2026-05-20": [
+  "10:00 AM: Community Kitchen Cooking Day",
+  "6:00 PM: Basketball Scrimmages"
+],
+"2026-05-21": [
+  "3:00 PM: Kid’s Art Class",
+  "7:00 PM: Outdoor Movie Night"
+],
+"2026-05-22": [
+  "11:00 AM: Yoga Flow",
+  "4:00 PM: Youth Basketball Practice"
+],
+"2026-05-23": [
+  "10:00 AM: Pickleball Tournament",
+  "5:00 PM: Game Night"
+],
+"2026-05-24": [
+  "9:00 AM: Open Gym",
+  "11:00 AM: Brunch Club Meet-Up"
+],
+"2026-05-25": [
+  "9:00 AM: Memorial Day Fitness Circuit",
+  "4:00 PM: Community BBQ"
+],
+"2026-05-26": [
+  "9:00 AM: Baking Session",
+  "4:00 PM: Kids Playroom Free Time"
+],
+"2026-05-27": [
+  "10:00 AM: Meditation Space Open Hours",
+  "6:30 PM: Game Night"
+],
+"2026-05-28": [
+  "7:00 AM: Spin Class",
+  "4:00 PM: Youth Tennis Lessons"
+],
+"2026-05-29": [
+  "9:00 AM: Basketball Open Play",
+  "6:00 PM: Spring Social"
+],
+"2026-05-30": [
+  "8:00 AM: Weight Room Training Block",
+  "6:00 PM: Community Volunteer Night"
+],
+"2026-05-31": [
+  "10:00 AM: Yoga and Stretch Session",
+  "7:00 PM: Spring Community Dinner"
+],
+"2026-06-01": [
+  "9:00 AM: Open Gym",
+  "5:00 PM: Teen Summer Kickoff"
+],
+"2026-06-02": [
+  "7:00 AM: Spin Class",
+  "6:00 PM: Pickleball Open Play"
+],
+"2026-06-03": [
+  "10:00 AM: Yoga Flow",
+  "6:30 PM: Game Night"
+],
+"2026-06-04": [
+  "3:00 PM: Kids Playroom Time",
+  "7:00 PM: Wine Tasting"
+],
+"2026-06-05": [
+  "9:00 AM: Baking Session",
+  "6:00 PM: Summer Social Mixer"
+],
+"2026-06-06": [
+  "10:00 AM: Youth Soccer Game",
+  "2:00 PM: Kayaking Trip"
+],
+"2026-06-07": [
+  "9:00 AM: Trail Clean-Up",
+  "11:00 AM: Brunch Club Meet-Up"
+],
+"2026-06-08": [
+  "8:00 AM: Weight Room Training Block",
+  "4:00 PM: Homework Help"
+],
+"2026-06-09": [
+  "10:00 AM: Coffee Meetup",
+  "6:00 PM: Young Professionals Social"
+],
+"2026-06-10": [
+  "11:00 AM: Meditation Session",
+  "4:30 PM: Youth Tennis Clinic"
+],
+"2026-06-11": [
+  "9:00 AM: Spin Class",
+  "6:00 PM: Game Night"
+],
+"2026-06-12": [
+  "8:00 AM: Weight Room Orientation",
+  "6:30 PM: Summer Mixer"
+],
+"2026-06-13": [
+  "10:00 AM: Community Garden Workday",
+  "3:00 PM: Pickleball Open Play"
+],
+"2026-06-14": [
+  "9:00 AM: Open Swim",
+  "4:00 PM: Family Movie Night"
+],
+"2026-06-15": [
+  "7:30 AM: Morning Bootcamp",
+  "5:00 PM: Teen Lounge Gathering"
+],
+"2026-06-16": [
+  "9:00 AM: Cardio Studio Circuit",
+  "6:00 PM: Volunteer Night"
+],
+"2026-06-17": [
+  "10:00 AM: Community Kitchen Cooking Day",
+  "6:00 PM: Basketball Scrimmages"
+],
+"2026-06-18": [
+  "3:00 PM: Kid’s Art Class",
+  "7:00 PM: Outdoor Movie Night"
+],
+"2026-06-19": [
+  "11:00 AM: Yoga Flow",
+  "4:00 PM: Youth Basketball Practice"
+],
+"2026-06-20": [
+  "10:00 AM: Pickleball Tournament",
+  "5:00 PM: Game Night"
+],
+"2026-06-21": [
+  "9:00 AM: Yoga and Stretch",
+  "11:00 AM: Father’s Day Brunch"
+],
+"2026-06-22": [
+  "9:00 AM: Open Gym",
+  "4:00 PM: Kids Playroom Free Time"
+],
+"2026-06-23": [
+  "10:00 AM: Meditation Space Open Hours",
+  "6:30 PM: Game Night"
+],
+"2026-06-24": [
+  "7:00 AM: Spin Class",
+  "4:00 PM: Youth Tennis Lessons"
+],
+"2026-06-25": [
+  "9:00 AM: Basketball Open Play",
+  "6:00 PM: Summer Social"
+],
+"2026-06-26": [
+  "8:00 AM: Weight Room Training Block",
+  "6:00 PM: Community Volunteer Night"
+],
+"2026-06-27": [
+  "10:00 AM: Yoga and Stretch Session",
+  "7:00 PM: Summer Community Dinner"
+],
+"2026-06-28": [
+  "9:00 AM: Hiking Club Meetup",
+  "4:00 PM: Family Picnic"
+],
+"2026-06-29": [
+  "7:30 AM: Morning Bootcamp",
+  "5:00 PM: Teen Summer Social"
+],
+"2026-06-30": [
+  "9:00 AM: Cardio Studio Open Hours",
+  "6:00 PM: End-of-Month Game Night"
 ]
   };
   
