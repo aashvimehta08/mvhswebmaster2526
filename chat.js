@@ -62,15 +62,7 @@ function initChatbotUI() {
         + '<li><b>Contact info:</b> <br><span style="opacity:0.9;">"What is the phone number?" or "What is your email?"</span></li>'
         + '<li><b>FAQs:</b> <br><span style="opacity:0.9;">"What programs do you offer?" or "How much does it cost?"</span></li>'
         + '<li><b>General tips:</b> <br><span style="opacity:0.9;">Use keywords like "kids", "culinary", "sports", or "outdoor" for best results.</span></li>'
-        + '</ul>'
-        + '<h2>How We Built the Chatbot</h2>'
-        + '<p style="opacity:0.9;">This chatbot uses a custom Python backend built with Flask. It scans the website HTML, extracts text and activity listings, and builds a TF-IDF search index to match questions with site content.</p>'
-        + '<ul>'
-        + '<li><b>Data source:</b> <br><span style="opacity:0.9;">All answers come from our own website files and calendar data.</span></li>'
-        + '<li><b>Search logic:</b> <br><span style="opacity:0.9;">Questions are matched with relevant pages, FAQs, activities, and calendar events.</span></li>'
-        + '<li><b>No external AI:</b> <br><span style="opacity:0.9;">This chatbot does not use OpenAI or any third-party AI APIs.</span></li>'
-        + '</ul>'
-        + '<button id="infoClose" aria-label="Hide info">✕</button>';
+        + '</ul>';
       var chatText = document.getElementById('chatText');
       if (chatText && chatText.nextSibling) {
         chatWindow.insertBefore(infoWidget, chatText.nextSibling);
@@ -89,15 +81,7 @@ function initChatbotUI() {
         + '<li><b>Contact info:</b> <br><span style="opacity:0.9;">"What is the phone number?" or "What is your email?"</span></li>'
         + '<li><b>FAQs:</b> <br><span style="opacity:0.9;">"What programs do you offer?" or "How much does it cost?"</span></li>'
         + '<li><b>General tips:</b> <br><span style="opacity:0.9;">Use keywords like "kids", "culinary", "sports", or "outdoor" for best results.</span></li>'
-        + '</ul>'
-        + '<h2>How We Built the Chatbot</h2>'
-        + '<p style="opacity:0.9;">This chatbot uses a custom Python backend built with Flask. It scans the website HTML, extracts text and activity listings, and builds a TF-IDF search index to match questions with site content.</p>'
-        + '<ul>'
-        + '<li><b>Data source:</b> <br><span style="opacity:0.9;">All answers come from our own website files and calendar data.</span></li>'
-        + '<li><b>Search logic:</b> <br><span style="opacity:0.9;">Questions are matched with relevant pages, FAQs, activities, and calendar events.</span></li>'
-        + '<li><b>No external AI:</b> <br><span style="opacity:0.9;">This chatbot does not use OpenAI or any third-party AI APIs.</span></li>'
-        + '</ul>'
-        + '<button id="infoClose" aria-label="Hide info">✕</button>';
+        + '</ul>';
     }
 
     var infoClose = document.getElementById('infoClose');

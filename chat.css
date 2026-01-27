@@ -255,3 +255,8 @@
 #chatbot.open #chatIcon {
   display:none;
 }
+@media (max-width: 768px) {
+    #chatbot{
+      display: none;
+    }
+}
