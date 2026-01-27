@@ -49,15 +49,23 @@
     <div id="chatbot">
     <img id="chatIcon" src="comment.png" onclick="openChat()">
     <div id="chatWindow">
-      <img id="closeIcon" src="cross.png" onclick="closeChat()">
+      <div id="chatControls">
+        <button id="infoToggle" aria-label="Show info">
+          <span>?</span>
+        </button>
+        <img id="closeIcon" src="cross.png" onclick="closeChat()">
+      </div>
       <h3 id="chatTitle">Chat with us</h3>
       <p id="chatText">How can we help you?</p>
+        <div id="infoWidget" style="display: none;"></div>
       <div id="chatMessages"></div>
       <div id="chatInputSection">
         <input type="text" placeholder="Ask anything!" id="chatInput">
         <button id="submitButton" type="submit"><img id="submitImg" src="paper-plane.png" alt="Send"></button>
       </div>
     </div>
+    <script src="chat.js"></script>
+    <!-- Info widget content is injected by chat.js -->
   </div>
    <div id="topSection">
        <img id="topLogo" src="logo.png" alt="logo">

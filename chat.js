@@ -15,8 +15,103 @@ function initChatbotUI() {
   var messagesEl = document.getElementById('chatMessages');
   var inputEl = document.getElementById('chatInput');
   var submitBtn = document.getElementById('submitButton');
+  var formEl = document.getElementById('chatInputSection');
 
-  if (!messagesEl || !inputEl || !submitBtn) return;
+  if (!messagesEl || !inputEl || !submitBtn || !formEl) return;
+
+  var chatWindow = document.getElementById('chatWindow');
+  if (chatWindow) {
+    var controls = document.getElementById('chatControls');
+    var closeIcon = document.getElementById('closeIcon');
+    var infoToggle = document.getElementById('infoToggle');
+
+    if (!controls) {
+      controls = document.createElement('div');
+      controls.id = 'chatControls';
+      if (chatWindow.firstChild) {
+        chatWindow.insertBefore(controls, chatWindow.firstChild);
+      } else {
+        chatWindow.appendChild(controls);
+      }
+    }
+
+    if (!infoToggle) {
+      infoToggle = document.createElement('button');
+      infoToggle.id = 'infoToggle';
+      infoToggle.setAttribute('aria-label', 'Show info');
+      infoToggle.innerHTML = '<span>?</span>';
+      controls.appendChild(infoToggle);
+    }
+
+    if (closeIcon && closeIcon.parentNode !== controls) {
+      controls.appendChild(closeIcon);
+    }
+
+    var infoWidget = document.getElementById('infoWidget');
+    if (!infoWidget) {
+      infoWidget = document.createElement('div');
+      infoWidget.id = 'infoWidget';
+      infoWidget.style.display = 'none';
+      infoWidget.innerHTML = ''
+        + '<h2>How to Prompt the Chatbot</h2>'
+        + '<ul>'
+        + '<li><b>Find calendar events:</b> <br><span style="opacity:0.9;">"Events on 1/26/2026" or "Show events on January 26"</span></li>'
+        + '<li><b>Ask about activities:</b> <br><span style="opacity:0.9;">"Do you have pickleball?" or "Tell me about hiking trails"</span></li>'
+        + '<li><b>Find the mission statement:</b> <br><span style="opacity:0.9;">"What is the mission statement?"</span></li>'
+        + '<li><b>Origin story:</b> <br><span style="opacity:0.9;">"How did you begin?" or "Where did you start?"</span></li>'
+        + '<li><b>Contact info:</b> <br><span style="opacity:0.9;">"What is the phone number?" or "What is your email?"</span></li>'
+        + '<li><b>FAQs:</b> <br><span style="opacity:0.9;">"What programs do you offer?" or "How much does it cost?"</span></li>'
+        + '<li><b>General tips:</b> <br><span style="opacity:0.9;">Use keywords like "kids", "culinary", "sports", or "outdoor" for best results.</span></li>'
+        + '</ul>'
+        + '<h2>How We Built the Chatbot</h2>'
+        + '<p style="opacity:0.9;">This chatbot uses a custom Python backend built with Flask. It scans the website HTML, extracts text and activity listings, and builds a TF-IDF search index to match questions with site content.</p>'
+        + '<ul>'
+        + '<li><b>Data source:</b> <br><span style="opacity:0.9;">All answers come from our own website files and calendar data.</span></li>'
+        + '<li><b>Search logic:</b> <br><span style="opacity:0.9;">Questions are matched with relevant pages, FAQs, activities, and calendar events.</span></li>'
+        + '<li><b>No external AI:</b> <br><span style="opacity:0.9;">This chatbot does not use OpenAI or any third-party AI APIs.</span></li>'
+        + '</ul>'
+        + '<button id="infoClose" aria-label="Hide info">✕</button>';
+      var chatText = document.getElementById('chatText');
+      if (chatText && chatText.nextSibling) {
+        chatWindow.insertBefore(infoWidget, chatText.nextSibling);
+      } else {
+        chatWindow.insertBefore(infoWidget, messagesEl);
+      }
+    }
+    if (infoWidget && infoWidget.innerHTML.trim().length === 0) {
+      infoWidget.innerHTML = ''
+        + '<h2>How to Prompt the Chatbot</h2>'
+        + '<ul>'
+        + '<li><b>Find calendar events:</b> <br><span style="opacity:0.9;">"Events on 1/26/2026" or "Show events on January 26"</span></li>'
+        + '<li><b>Ask about activities:</b> <br><span style="opacity:0.9;">"Do you have pickleball?" or "Tell me about hiking trails"</span></li>'
+        + '<li><b>Find the mission statement:</b> <br><span style="opacity:0.9;">"What is the mission statement?"</span></li>'
+        + '<li><b>Origin story:</b> <br><span style="opacity:0.9;">"How did you begin?" or "Where did you start?"</span></li>'
+        + '<li><b>Contact info:</b> <br><span style="opacity:0.9;">"What is the phone number?" or "What is your email?"</span></li>'
+        + '<li><b>FAQs:</b> <br><span style="opacity:0.9;">"What programs do you offer?" or "How much does it cost?"</span></li>'
+        + '<li><b>General tips:</b> <br><span style="opacity:0.9;">Use keywords like "kids", "culinary", "sports", or "outdoor" for best results.</span></li>'
+        + '</ul>'
+        + '<h2>How We Built the Chatbot</h2>'
+        + '<p style="opacity:0.9;">This chatbot uses a custom Python backend built with Flask. It scans the website HTML, extracts text and activity listings, and builds a TF-IDF search index to match questions with site content.</p>'
+        + '<ul>'
+        + '<li><b>Data source:</b> <br><span style="opacity:0.9;">All answers come from our own website files and calendar data.</span></li>'
+        + '<li><b>Search logic:</b> <br><span style="opacity:0.9;">Questions are matched with relevant pages, FAQs, activities, and calendar events.</span></li>'
+        + '<li><b>No external AI:</b> <br><span style="opacity:0.9;">This chatbot does not use OpenAI or any third-party AI APIs.</span></li>'
+        + '</ul>'
+        + '<button id="infoClose" aria-label="Hide info">✕</button>';
+    }
+
+    var infoClose = document.getElementById('infoClose');
+    if (infoToggle && infoWidget) {
+      infoToggle.addEventListener('click', function() {
+        infoWidget.style.display = infoWidget.style.display === 'none' ? 'block' : 'none';
+      });
+    }
+    if (infoClose && infoWidget) {
+      infoClose.addEventListener('click', function() {
+        infoWidget.style.display = 'none';
+      });
+    }
+  }
 
   var isSending = false;
   var REQUEST_TIMEOUT_MS = 15000;
@@ -100,9 +195,13 @@ function initChatbotUI() {
       });
   }
 
+  formEl.addEventListener('submit', function(e) {
+    e.preventDefault();
+    sendMessage();
+  });
   submitBtn.addEventListener('click', sendMessage);
   inputEl.addEventListener('input', function() { setSending(false); });
-  inputEl.addEventListener('keypress', function(e) {
+  inputEl.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
       e.preventDefault();
       sendMessage();
