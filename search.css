@@ -244,7 +244,10 @@ html, body{
 
 /* Mobile adjustments for search input */
 @media (max-width: 768px) {
-    
+    body {
+        background-image: url("superduperlong bg.png");
+        background-color: #011022;
+      }
     #searchInput {
         width: 85%;
         font-size: 4vw;
