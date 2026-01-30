@@ -24,24 +24,23 @@ html{
    margin: 0;
 }
 #topSection{
- height: 11vw;
- background-color: white;
- display: flex;
- align-items: center;
- justify-content: center;
- gap: 2vw;
+  height: 11vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
 }
 #topLogo{
-   height: 6vw;
-   margin-top: 4vw;
- }
+  height: 6vw;
+  margin-top: 4vw;
+}
 #feedbackText{
-   margin: 0;
-   text-align: center;
-   line-height: 10vw;
-   letter-spacing: 2vw;
-   margin-top: 4vw;
-   font-size: 2.5vw;
+  text-align: center;
+  line-height: 10vw;
+  letter-spacing: 2vw;
+  margin-top: 4vw;
+  font-size: 2.5vw;
 }
 .formBox{
    align-items: center;
