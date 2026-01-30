@@ -97,7 +97,7 @@ html, body{
 }
 @media (max-width: 768px) {
     body {
-      background-image: url('long-bg.png');
+      background-image: url("superduperlong bg.png");
     }
     #topSection{
         height: 20vw;
@@ -164,6 +164,15 @@ html, body{
       background-color: white;
       opacity: 0.8;
     }
+    #searchInput {
+      width: 85%;
+      font-size: 4vw;
+      padding: 3vw;
+      border-radius: 3vw;
+      margin: auto;
+      margin-top: 3vw;
+      margin-bottom: 6vw;
+  }
 }
 #mainContent{
     margin: 0;
@@ -242,21 +251,5 @@ html, body{
     pointer-events: none;
 }
 
-/* Mobile adjustments for search input */
-@media (max-width: 768px) {
-    body {
-        background-image: url("superduperlong bg.png");
-        background-color: #011022;
-      }
-    #searchInput {
-        width: 85%;
-        font-size: 4vw;
-        padding: 3vw;
-        border-radius: 3vw;
-        margin: auto;
-        margin-top: 3vw;
-        margin-bottom: 6vw;
-    }
-}
 
 
