@@ -1,15 +1,9 @@
-"""
-Custom HTML Content Extractor
-Extracts meaningful text content from HTML files without external dependencies
-"""
-
 import re
 import os
 from html.parser import HTMLParser
 
 
 class CustomHTMLParser(HTMLParser):
-    """Custom HTML parser to extract text content"""
     
     def __init__(self):
         super().__init__()
@@ -40,9 +34,7 @@ class CustomHTMLParser(HTMLParser):
             if clean_data:
                 self.text_content.append(clean_data)
 
-
 def extract_text_from_html(file_path):
-    """Extract text content from an HTML file"""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
@@ -50,10 +42,8 @@ def extract_text_from_html(file_path):
         parser = CustomHTMLParser()
         parser.feed(html_content)
         
-        # Combine all text content
         full_text = ' '.join(parser.text_content)
         
-        # Clean up extra whitespace
         full_text = re.sub(r'\s+', ' ', full_text).strip()
         
         return full_text
@@ -61,9 +51,7 @@ def extract_text_from_html(file_path):
         print(f"Error extracting text from {file_path}: {e}")
         return ""
 
-
 def extract_structured_content(file_path):
-    """Extract structured content (titles, paragraphs) from HTML"""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
@@ -75,29 +63,24 @@ def extract_structured_content(file_path):
             'items': []
         }
         
-        # Extract title
         title_match = re.search(r'<title>(.*?)</title>', html_content, re.IGNORECASE | re.DOTALL)
         if not title_match:
             title_match = re.search(r'<h1[^>]*>(.*?)</h1>', html_content, re.IGNORECASE | re.DOTALL)
         if title_match:
             structured['title'] = re.sub(r'<[^>]+>', '', title_match.group(1)).strip()
         
-        # Extract headings
         heading_pattern = r'<h[1-6][^>]*>(.*?)</h[1-6]>'
         headings = re.findall(heading_pattern, html_content, re.IGNORECASE | re.DOTALL)
         structured['headings'] = [re.sub(r'<[^>]+>', '', h).strip() for h in headings if h.strip()]
         
-        # Extract paragraphs (all)
         para_pattern = r'<p[^>]*>(.*?)</p>'
         paras = re.findall(para_pattern, html_content, re.IGNORECASE | re.DOTALL)
         structured['paragraphs'] = [re.sub(r'<[^>]+>', '', p).strip() for p in paras if p.strip()]
         
-        # Extract event titles
         event_title_pattern = r'<h[12][^>]*class="[^"]*eventTitle[^"]*"[^>]*>(.*?)</h[12]>'
         event_titles = re.findall(event_title_pattern, html_content, re.IGNORECASE | re.DOTALL)
         items = [re.sub(r'<[^>]+>', '', t).strip() for t in event_titles if t.strip()]
 
-        # Extract list items
         li_pattern = r'<li[^>]*>(.*?)</li>'
         lis = re.findall(li_pattern, html_content, re.IGNORECASE | re.DOTALL)
         items.extend([re.sub(r'<[^>]+>', '', li).strip() for li in lis if li.strip()])
@@ -108,9 +91,7 @@ def extract_structured_content(file_path):
         print(f"Error extracting structured content from {file_path}: {e}")
         return {'title': '', 'headings': [], 'paragraphs': [], 'items': []}
 
-
 def load_all_html_files(directory):
-    """Load all HTML files from a directory (recursive)"""
     html_files = {}
     skip_dirs = {'.git', 'node_modules', '__pycache__', 'chatbot'}
 
