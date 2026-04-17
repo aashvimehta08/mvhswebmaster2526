@@ -25,7 +25,14 @@ chatbot = CustomChatbot(website_directory)
 def chat():
     try:
         data = request.get_json()
-        query = data.get('message', '').strip()
+        query = data.get('message', '')
+
+        if not isinstance(query, str):
+            query = str(query)
+
+        # Normalize user punctuation/quotes so prompts like “tell me about basketball”
+        # and "tell me about basketball" route consistently.
+        query = query.strip().strip('"\'“”‘’')
         
         query = re.sub(r'\s+', ' ', query).strip()
         if len(query) > 500:
