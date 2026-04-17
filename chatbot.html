@@ -253,23 +253,9 @@
     <a href="homePage.html" class="back-link" id="back-link">← Back to Home</a>
     
     <div class="chatbot-container">
-        <div class="chatbot-header" style="position: relative;">
+        <div class="chatbot-header">
             <h1>❀ Mile High Movement Chatbot ❀</h1>
             <p>Ask me anything about our community center!</p>
-            <button id="infoToggle" aria-label="Show info" style="position: absolute; top: 18px; right: 18px; background: none; border: none; cursor: pointer;">
-                <span style="font-size: 22px; color: white;">❓</span>
-            </button>
-        </div>
-        <div id="infoWidget" style="display: none; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); padding: 24px 20px; margin: 18px 24px 0 24px; font-size: 15px; position: relative; z-index: 10;">
-            <h2 style="margin-top:0; font-size: 20px;">How to Prompt the Chatbot</h2>
-            <ul style="margin: 12px 0 0 0; padding-left: 18px;">
-                <li><b>Find calendar events:</b> <br><span style="opacity:0.9;">"Show me upcoming events" or "What is happening on Friday?"</span></li>
-                <li><b>Get info on activities:</b> <br><span style="opacity:0.9;">"Tell me about fitness classes" or "What outdoor programs are available?"</span></li>
-                <li><b>Find the mission statement:</b> <br><span style="opacity:0.9;">"What is the mission statement?" or "Share the center's mission"</span></li>
-                <li><b>Contact info:</b> <br><span style="opacity:0.9;">"How do I contact you?" or "What is the phone number?"</span></li>
-                <li><b>General tips:</b> <br><span style="opacity:0.9;">Be specific (e.g., "kids programs" or "culinary classes") for best results.</span></li>
-            </ul>
-            <button id="infoClose" aria-label="Hide info" style="position: absolute; top: 12px; right: 12px; background: none; border: none; color: white; font-size: 18px; cursor: pointer;">✕</button>
         </div>
         
         <div class="chatbot-messages" id="messages" role="log" aria-live="polite" aria-relevant="additions">
@@ -315,18 +301,6 @@
         const userInput = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
         const REQUEST_TIMEOUT_MS = 15000;
-
-        // Info widget logic
-        const infoToggle = document.getElementById('infoToggle');
-        const infoWidget = document.getElementById('infoWidget');
-        const infoClose = document.getElementById('infoClose');
-
-        infoToggle.addEventListener('click', function() {
-            infoWidget.style.display = infoWidget.style.display === 'none' ? 'block' : 'none';
-        });
-        infoClose.addEventListener('click', function() {
-            infoWidget.style.display = 'none';
-        });
 
         // Remove welcome message when user starts chatting
         let welcomeRemoved = false;
