@@ -297,10 +297,13 @@
             || (isLocalHost || isFileProtocol
                 ? 'http://localhost:5001/api/chat'
                 : `${window.location.origin}/api/chat`);
+        const READY_URL = API_URL.replace('/api/chat', '/api/ready');
         const messagesContainer = document.getElementById('messages');
         const userInput = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
         const REQUEST_TIMEOUT_MS = 15000;
+        let chatbotReady = false;
+        let readyCheckInterval = null;
 
         // Remove welcome message when user starts chatting
         let welcomeRemoved = false;
@@ -378,13 +381,56 @@
             }
         }
 
+        // Create and show warmup banner
+        const warmupBanner = document.createElement('div');
+        warmupBanner.id = 'chatbot-warmup-banner';
+        warmupBanner.style.cssText = 'background:#f0f0f0;border-bottom:1px solid #ccc;padding:10px;text-align:center;font-size:14px;color:#666;display:none;';
+        warmupBanner.innerHTML = '⏳ Chatbot is starting up... Please wait.';
+        messagesContainer.parentNode.insertBefore(warmupBanner, messagesContainer);
+
+        // Poll the /api/ready endpoint
+        function pollReady() {
+            fetch(READY_URL)
+                .then(r => r.json())
+                .then(data => {
+                    if (data && data.ready) {
+                        chatbotReady = true;
+                        warmupBanner.style.display = 'none';
+                        sendButton.disabled = userInput.value.trim().length === 0;
+                        if (readyCheckInterval) {
+                            clearInterval(readyCheckInterval);
+                            readyCheckInterval = null;
+                        }
+                    } else {
+                        chatbotReady = false;
+                        warmupBanner.style.display = 'block';
+                        sendButton.disabled = true;
+                    }
+                })
+                .catch(() => {
+                    chatbotReady = false;
+                    warmupBanner.style.display = 'block';
+                    sendButton.disabled = true;
+                });
+        }
+
+        // Start polling immediately
+        pollReady();
+        readyCheckInterval = setInterval(pollReady, 1000);
+
         function updateSendState() {
-            sendButton.disabled = isSending || userInput.value.trim().length === 0;
+            sendButton.disabled = isSending || userInput.value.trim().length === 0 || !chatbotReady;
         }
 
         async function sendMessage() {
             const message = userInput.value.trim();
             if (!message || isSending) return;
+
+            // Guard: don't send if chatbot is not ready
+            if (!chatbotReady) {
+                addMessage('The chatbot is still starting up. Please wait...', false);
+                return;
+            }
 
             // Disable input while processing
             isSending = true;
@@ -399,47 +445,62 @@
             // Show typing indicator
             showTypingIndicator();
 
-            try {
+            const MAX_RETRIES = 3;
+            const BASE_BACKOFF = 1000;
+
+            async function attempt(attemptNum) {
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ message: message }),
-                    signal: controller.signal
-                });
-
-                clearTimeout(timeoutId);
-
-                if (!response.ok) {
-                    throw new Error(`Server responded with status ${response.status}`);
-                }
-
-                let data;
                 try {
-                    data = await response.json();
-                } catch (parseError) {
-                    throw new Error('Unable to read server response.');
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: message }),
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
+                    if (!response.ok) throw new Error(`Server responded with status ${response.status}`);
+                    let data;
+                    try { data = await response.json(); } catch (e) { throw new Error('Unable to read server response.'); }
+
+                    hideTypingIndicator();
+
+                    if (data && (data.status === 'initializing' || (data.response && String(data.response).toLowerCase().includes('starting up')))) {
+                        if (attemptNum < MAX_RETRIES) {
+                            const wait = BASE_BACKOFF * Math.pow(2, attemptNum - 1);
+                            addMessage('Chatbot is starting up — retrying in ' + (wait/1000) + 's...', false);
+                            await new Promise(r => setTimeout(r, wait));
+                            showTypingIndicator();
+                            return attempt(attemptNum + 1);
+                        } else {
+                            addMessage('The chatbot is still starting up. Please try again shortly.', false);
+                            return;
+                        }
+                    }
+
+                    if (data && data.status === 'success' && data.response) {
+                        addMessage(data.response, false);
+                    } else {
+                        addMessage('I apologize, but I encountered an error. Please try again.', false);
+                    }
+                } catch (error) {
+                    hideTypingIndicator();
+                    const isAbort = error && error.name === 'AbortError';
+                    if ((isAbort || !error || !error.message) && attemptNum < MAX_RETRIES) {
+                        const wait = BASE_BACKOFF * Math.pow(2, attemptNum - 1);
+                        addMessage('Network issue detected — retrying in ' + (wait/1000) + 's...', false);
+                        await new Promise(r => setTimeout(r, wait));
+                        showTypingIndicator();
+                        return attempt(attemptNum + 1);
+                    }
+
+                    const errorMessage = isAbort ? 'Sorry, the request timed out. Please try again.' : 'Sorry, I cannot connect to the server. Please make sure the backend is running.';
+                    addMessage(errorMessage, false);
+                    console.error('Error:', error);
                 }
-                
-                hideTypingIndicator();
-                
-                if (data && data.status === 'success' && data.response) {
-                    addMessage(data.response, false);
-                } else {
-                    addMessage('I apologize, but I encountered an error. Please try again.', false);
-                }
-            } catch (error) {
-                hideTypingIndicator();
-                const errorMessage = error.name === 'AbortError'
-                    ? 'Sorry, the request timed out. Please try again.'
-                    : 'Sorry, I cannot connect to the server. Please make sure the backend is running.';
-                addMessage(errorMessage, false);
-                console.error('Error:', error);
             }
+
+            await attempt(1);
 
             // Re-enable input
             isSending = false;
